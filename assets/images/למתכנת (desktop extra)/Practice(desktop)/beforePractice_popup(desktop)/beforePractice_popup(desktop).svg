@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="566.859" height="793.219" viewBox="0 0 566.859 793.219">
+  <defs>
+    <style>
+      .cls-1, .cls-3 {
+        fill: none;
+        stroke-miterlimit: 10;
+      }
+
+      .cls-1 {
+        stroke: #708fa0;
+        stroke-linecap: round;
+        stroke-width: 7px;
+      }
+
+      .cls-2 {
+        fill: #fff;
+      }
+
+      .cls-3 {
+        stroke: #b3b3b3;
+        stroke-width: 8px;
+      }
+    </style>
+  </defs>
+  <g id="Group_303" data-name="Group 303" transform="translate(0 3.478)">
+    <line id="Line_103" data-name="Line 103" class="cls-1" x2="5.71" y2="22.811" transform="translate(106.063 28.385)"/>
+    <path id="Path_459" data-name="Path 459" class="cls-1" d="M-2327.444-1106.641l1.352,5.4a7.037,7.037,0,0,1-5.117,8.534h0a7.036,7.036,0,0,1-8.534-5.117l-1.352-5.4-6.672-26.653" transform="translate(2438.485 1154.908)"/>
+    <rect id="Rectangle_27" data-name="Rectangle 27" class="cls-2" width="566.859" height="753.599" rx="37.326" transform="translate(0 36.143)"/>
+    <path id="Path_460" data-name="Path 460" class="cls-3" d="M-2328.244-1161.541" transform="translate(2445.628 1161.541)"/>
+    <g id="Group_302" data-name="Group 302" transform="translate(76.523 0.056)">
+      <path id="Path_461" data-name="Path 461" class="cls-1" d="M-2359.749-1112.142-2370.4-1154.7a12.607,12.607,0,0,1,9.169-15.291h0a12.607,12.607,0,0,1,15.291,9.168l4.7,18.78" transform="translate(2370.783 1170.371)"/>
+      <path id="Path_462" data-name="Path 462" class="cls-1" d="M-2363.374-1117.828l10.009,39.984a17.736,17.736,0,0,0,21.511,12.9h0a17.735,17.735,0,0,0,12.9-21.511l-4.639-17.965" transform="translate(2367.943 1150.233)"/>
+    </g>
+  </g>
+</svg>

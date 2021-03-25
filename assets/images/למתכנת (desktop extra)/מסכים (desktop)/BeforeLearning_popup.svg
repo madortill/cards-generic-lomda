@@ -1,0 +1,176 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1920" height="1080" viewBox="0 0 1920 1080">
+  <defs>
+    <style>
+      .cls-1, .cls-12, .cls-16, .cls-17, .cls-3, .cls-5 {
+        fill: none;
+      }
+
+      .cls-2 {
+        clip-path: url(#clip-BeforeLearning_popup);
+      }
+
+      .cls-3 {
+        stroke: #708fa0;
+      }
+
+      .cls-12, .cls-16, .cls-17, .cls-3 {
+        stroke-linecap: round;
+      }
+
+      .cls-3, .cls-5 {
+        stroke-miterlimit: 10;
+      }
+
+      .cls-17, .cls-3 {
+        stroke-width: 7px;
+      }
+
+      .cls-10, .cls-4 {
+        fill: #fff;
+      }
+
+      .cls-5 {
+        stroke: #b3b3b3;
+        stroke-width: 8px;
+      }
+
+      .cls-11, .cls-13, .cls-6, .cls-7 {
+        fill: #1c3f55;
+      }
+
+      .cls-6 {
+        font-size: 48px;
+      }
+
+      .cls-10, .cls-6 {
+        font-family: Rubik-Bold, Rubik;
+        font-weight: 700;
+      }
+
+      .cls-8 {
+        opacity: 0.2;
+      }
+
+      .cls-9 {
+        fill: #1de8f7;
+      }
+
+      .cls-10 {
+        font-size: 32px;
+      }
+
+      .cls-11 {
+        font-size: 29px;
+      }
+
+      .cls-11, .cls-13 {
+        font-family: Rubik-Medium, Rubik;
+        font-weight: 500;
+      }
+
+      .cls-12 {
+        stroke: #fff;
+        stroke-linejoin: round;
+        stroke-width: 4px;
+      }
+
+      .cls-13 {
+        font-size: 28px;
+      }
+
+      .cls-14 {
+        font-family: Rubik-Regular, Rubik;
+        font-weight: 400;
+      }
+
+      .cls-15 {
+        clip-path: url(#clip-path);
+      }
+
+      .cls-16 {
+        stroke: #dbdbdb;
+        stroke-width: 2px;
+        opacity: 0.5;
+      }
+
+      .cls-17 {
+        stroke: #1c3f55;
+      }
+    </style>
+    <clipPath id="clip-path">
+      <rect class="cls-1" width="437.107" height="167.591"/>
+    </clipPath>
+    <clipPath id="clip-BeforeLearning_popup">
+      <rect width="1920" height="1080"/>
+    </clipPath>
+  </defs>
+  <g id="BeforeLearning_popup" class="cls-2">
+    <rect id="Rectangle_59" data-name="Rectangle 59" width="1920" height="1080"/>
+    <g id="Group_550" data-name="Group 550" transform="translate(520.415 -166.397)">
+      <g id="Group_303" data-name="Group 303" transform="translate(156.707 377.956)">
+        <line id="Line_103" data-name="Line 103" class="cls-3" x2="5.706" y2="22.794" transform="translate(105.986 28.364)"/>
+        <path id="Path_459" data-name="Path 459" class="cls-3" d="M-2327.459-1106.658l1.351,5.4a7.031,7.031,0,0,1-5.113,8.528h0a7.031,7.031,0,0,1-8.528-5.113l-1.351-5.4-6.667-26.634" transform="translate(2438.418 1154.889)"/>
+        <rect id="Rectangle_27" data-name="Rectangle 27" class="cls-4" width="566.445" height="621.648" rx="37.326" transform="translate(0 36.116)"/>
+        <path id="Path_460" data-name="Path 460" class="cls-5" d="M-2328.244-1161.541" transform="translate(2445.542 1161.541)"/>
+        <g id="Group_302" data-name="Group 302" transform="translate(76.467 0.056)">
+          <path id="Path_461" data-name="Path 461" class="cls-3" d="M-2359.757-1112.185l-10.646-42.527a12.6,12.6,0,0,1,9.162-15.279h0a12.6,12.6,0,0,1,15.279,9.162l4.7,18.766" transform="translate(2370.783 1170.371)"/>
+          <path id="Path_462" data-name="Path 462" class="cls-3" d="M-2363.374-1117.828l10,39.954a17.723,17.723,0,0,0,21.5,12.889h0a17.722,17.722,0,0,0,12.888-21.5l-4.636-17.952" transform="translate(2367.94 1150.21)"/>
+        </g>
+      </g>
+      <text id="ישנם_סוגי_קלפי_מידע" data-name="ישנם סוגי קלפי מידע" class="cls-6" transform="translate(436.585 529.397)"><tspan x="-208.56" y="0">ישנם סוגי קלפי מידע</tspan></text>
+      <g id="Component_5_1" data-name="Component 5 – 1" transform="translate(322.469 886.666)">
+        <rect id="Rectangle_33" data-name="Rectangle 33" class="cls-7" width="3.814" height="38.316" rx="1.907" transform="translate(198.591 16.98)"/>
+        <g id="Group_315" data-name="Group 315" class="cls-8">
+          <rect id="Rectangle_19" data-name="Rectangle 19" class="cls-9" width="185.425" height="72.276" rx="23"/>
+          <text id="הבנתי" class="cls-10" transform="translate(135.116 46.731)"><tspan x="-84.992" y="0">הבנתי</tspan></text>
+        </g>
+        <text id="_3" data-name="3" class="cls-11" transform="translate(233.116 45.731)"><tspan x="-18.299" y="0">3</tspan></text>
+      </g>
+      <g id="Group_314" data-name="Group 314" transform="translate(227.796 612.74)">
+        <g id="Group_324" data-name="Group 324" transform="translate(0 4.444)">
+          <circle id="Ellipse_8" data-name="Ellipse 8" class="cls-9" cx="29.5" cy="29.5" r="29.5" transform="translate(-0.211 0.213)"/>
+          <g id="Group_324-2" data-name="Group 324" transform="translate(17.29 14.853)">
+            <rect id="Rectangle_38" data-name="Rectangle 38" class="cls-12" width="15.956" height="22.092" rx="2" transform="translate(0 0)"/>
+            <path id="Path_463" data-name="Path 463" class="cls-12" d="M465.615,183.468v19.741a2.351,2.351,0,0,1-2.351,2.351h-13.6" transform="translate(-441.516 -175.324)"/>
+          </g>
+        </g>
+        <text id="שכבתי_לחץ_כדי_לגלות_עוד_מידע" data-name="שכבתי
+לחץ כדי לגלות עוד מידע" class="cls-13" transform="translate(415.913 26)"><tspan x="-77.812" y="0"></tspan><tspan y="0">שכבתי</tspan><tspan class="cls-14"><tspan x="-269.192" y="34">לחץ כדי לגלות עוד מידע</tspan></tspan></text>
+      </g>
+      <g id="Group_421" data-name="Group 421" transform="translate(227.796 736.767)">
+        <text id="סרטון_לחץ_כדי_לצפות_בסרטון" data-name="סרטון
+לחץ כדי לצפות בסרטון" class="cls-13" transform="translate(416.631 26)"><tspan x="-65.968" y="0"></tspan><tspan y="0">סרטון</tspan><tspan class="cls-14"><tspan x="-252.028" y="34">לחץ כדי לצפות בסרטון</tspan></tspan></text>
+        <g id="Group_504" data-name="Group 504" transform="translate(0 5.182)">
+          <ellipse id="Ellipse_8-2" data-name="Ellipse 8" class="cls-9" cx="29.5" cy="29" rx="29.5" ry="29" transform="translate(-0.211 0.448)"/>
+          <path id="Path_464" data-name="Path 464" class="cls-12" d="M648.793,246.549l-17.13-11.59v23.18Z" transform="translate(-607.343 -217.291)"/>
+        </g>
+      </g>
+      <g id="Repeat_Grid_1" data-name="Repeat Grid 1" class="cls-15" transform="translate(224.331 707.18)">
+        <g transform="translate(-248.307 -671.905)">
+          <path id="Path_517" data-name="Path 517" class="cls-16" d="M836.239,761.856v590.08" transform="translate(1601.242 -163.335) rotate(90)"/>
+        </g>
+        <g transform="translate(-248.307 -530.905)">
+          <path id="Path_517-2" data-name="Path 517" class="cls-16" d="M836.239,761.856v590.08" transform="translate(1601.242 -163.335) rotate(90)"/>
+        </g>
+      </g>
+      <g id="Group_470" data-name="Group 470" transform="translate(660.699 454.297)">
+        <g id="Group_440" data-name="Group 440" transform="translate(0 0)">
+          <g id="Group_372" data-name="Group 372" transform="translate(0 0) rotate(45)">
+            <path id="Path_490" data-name="Path 490" class="cls-17" d="M31.13,0H0" transform="translate(0 0)"/>
+          </g>
+          <g id="Group_468" data-name="Group 468" transform="translate(0 0) rotate(45)">
+            <path id="Path_490-2" data-name="Path 490" class="cls-17" d="M31.13,0H0" transform="translate(0 0)"/>
+          </g>
+        </g>
+        <g id="Group_469" data-name="Group 469" transform="translate(22.013 0) rotate(90)">
+          <g id="Group_372-2" data-name="Group 372" transform="translate(0 0) rotate(45)">
+            <path id="Path_490-3" data-name="Path 490" class="cls-17" d="M31.13,0H0"/>
+          </g>
+          <g id="Group_468-2" data-name="Group 468" transform="translate(0 0) rotate(45)">
+            <path id="Path_490-4" data-name="Path 490" class="cls-17" d="M31.13,0H0"/>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

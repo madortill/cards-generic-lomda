@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="60" height="61" viewBox="0 0 60 61">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #1de8f7;
+      }
+
+      .cls-2 {
+        fill: none;
+        stroke: #fff;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 4px;
+      }
+    </style>
+  </defs>
+  <g id="Group_324" data-name="Group 324" transform="translate(-0.136 0.411)">
+    <ellipse id="Ellipse_8" data-name="Ellipse 8" class="cls-1" cx="30" cy="30.5" rx="30" ry="30.5" transform="translate(0.136 -0.411)"/>
+    <g id="Group_324-2" data-name="Group 324" transform="translate(17.64 14.994)">
+      <rect id="Rectangle_38" data-name="Rectangle 38" class="cls-2" width="16.215" height="22.451" rx="2" transform="translate(0 0)"/>
+      <path id="Path_463" data-name="Path 463" class="cls-2" d="M465.875,183.468V203.53a2.389,2.389,0,0,1-2.389,2.389H449.66" transform="translate(-441.384 -175.192)"/>
+    </g>
+  </g>
+</svg>

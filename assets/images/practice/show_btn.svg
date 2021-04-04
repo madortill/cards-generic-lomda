@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="335.747" height="110.901" viewBox="0 0 335.747 110.901">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #27c5f2;
+        opacity: 0.2;
+        mix-blend-mode: multiply;
+        isolation: isolate;
+      }
+
+      .cls-2, .cls-5 {
+        fill: #fff;
+      }
+
+      .cls-3, .cls-4 {
+        fill: #1c3f55;
+      }
+
+      .cls-3 {
+        font-size: 53px;
+      }
+
+      .cls-3, .cls-5 {
+        font-family: Rubik-Bold, Rubik;
+        font-weight: 700;
+      }
+
+      .cls-5 {
+        font-size: 33px;
+      }
+    </style>
+  </defs>
+  <g id="Group_341" data-name="Group 341" transform="translate(474.239)">
+    <rect id="Rectangle_25" data-name="Rectangle 25" class="cls-1" width="335.747" height="97.901" rx="23" transform="translate(-474.239 13)"/>
+    <rect id="Rectangle_24" data-name="Rectangle 24" class="cls-2" width="335.747" height="97.901" rx="23" transform="translate(-474.239)"/>
+    <g id="Group_340" data-name="Group 340" transform="translate(-493.314)">
+      <text id="גלה_לי" data-name="גלה לי" class="cls-3" transform="translate(221.075 67.323)"><tspan x="-142.358" y="0">גלה לי</tspan></text>
+      <g id="Group_340-2" data-name="Group 340" transform="translate(240.616 22.863)">
+        <g id="Group_338" data-name="Group 338">
+          <path id="Path_465" data-name="Path 465" class="cls-4" d="M54.112,27.055A27.056,27.056,0,1,1,27.056,0,27.055,27.055,0,0,1,54.112,27.055"/>
+        </g>
+        <text id="_" data-name="?" class="cls-5" transform="translate(16.459 38.46)"><tspan x="0" y="0">?</tspan></text>
+      </g>
+    </g>
+  </g>
+</svg>

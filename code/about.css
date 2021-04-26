@@ -9,41 +9,43 @@
 
 .page.about .card-container {
   position: relative;
-  height: 70%;
-  max-width: 90%;
+  width: 41vmax;
+  /* flex: 1; */
+  margin: 5vh 0;
 }
 
 .page.about .about_header {
-  height: 20vmin;
-  margin-top: 4vh;
+  height: 7.5vmax;
+  /* margin-top: 0.2em; */
 }
 
 .page.about .card {
-  height: 100%;
-  max-width: 100%;
+  width: 100%;
 }
 
 .page.about .logo {
-  width: 21vw;
-  flex: 1;
+  height: 6.5vmax;
+  margin-top: 0.8em;
+  margin-bottom: 0.8em;
 }
 
 .page.about .text {
   position: absolute;
-  top: 10%;
+  top: 2em;
   color: rgb(28, 63, 85);
   display: flex;
   flex-direction: column;
-  margin-right: 10%;
-  height: 80%;
+  margin-right: 5vw;
+  height: 61vmax;
   justify-content: space-around;
+  width: 88%;
 }
 
 .page.about .container-titles :first-child {
-  font-size: 6vw;
+  font-size: 2.8vmax;
   font-weight: 800;
 }
 
 .page.about .container-titles :last-child {
-  font-size: 4vw;
+  font-size: 2.3vmax;
 }

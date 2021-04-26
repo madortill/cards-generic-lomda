@@ -7,7 +7,7 @@
     position: fixed;
     left: 0;
     top: 19vw;
-    height: 5.3vmax;
+    height: 8vw;
     display: none;
     animation: show 5s ease;
     -webkit-animation: show 5s ease;
@@ -22,8 +22,9 @@
 
 .page.home .books {
     display: none;
-    margin-top: 10vw;
-    height: 80vmin;
+    /* margin-top: 10vw; */
+    height: 16em;
+    min-height: 13em;
     animation: show 2s ease;
     -webkit-animation: show 2s ease;
 }

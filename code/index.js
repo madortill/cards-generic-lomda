@@ -1,6 +1,7 @@
 // כללי
 var SUBJECTS_TITLES;
 const AMOUNT_OF_TOTAL_QUESTIONS = 20;
+var blurAmount = "10px";
 //
 var selectedSubjects = [];
 
@@ -30,6 +31,7 @@ var answeredQuestions = 0;
 
 // עמוד למידה
 var currentCard = 0;
+var currSubjCount = -1;
 
 
 /** @type {(boolean|number)[]} */
@@ -96,7 +98,6 @@ function aboutPage(event) {
 // -------------------------------------------------------------------------------------
 // אתחול עמוד הנושאים ללמידה
 function learningSubjectsPage() {
-
     document.querySelector(".page.learning.subjects .back-btn").addEventListener("click", () => {
         document.querySelector(".page.learning.subjects").classList.remove("active");
         document.querySelector(".page.opening").classList.add("active");
@@ -132,11 +133,11 @@ function createStudyCards(currentSubject) {
 }
 
 function beforePractice() {
-    document.querySelector(".page.learning.subjects .title").style.filter = "blur(10px)";
-    document.querySelector(".page.learning.subjects .sub-title").style.filter = "blur(10px)";
-    document.querySelector(".page.learning.subjects .cards-container").style.filter = "blur(10px)";
-    document.querySelector(".page.learning.subjects .back-btn").style.filter = "blur(10px)";
-    document.querySelector(".page.learning.subjects .buttons").style.filter = "blur(10px)";
+    document.querySelector(".page.learning.subjects .title").style.filter = `blur(${blurAmount})`;
+    document.querySelector(".page.learning.subjects .sub-title").style.filter = `blur(${blurAmount})`;
+    document.querySelector(".page.learning.subjects .cards-container").style.filter = `blur(${blurAmount})`;
+    document.querySelector(".page.learning.subjects .back-btn").style.filter = `blur(${blurAmount})`;
+    document.querySelector(".page.learning.subjects .buttons").style.filter = `blur(${blurAmount})`;
 
     let popup =
         El("div", { cls: "dark" },
@@ -362,7 +363,6 @@ function practicePage(event) {
             }
         }
 
-        // document.querySelector(".page.practice .first-question .next-btn > img").addEventListener("click", nextQuestionPractice);
     }
 
     // התחלת הספירה לאחור
@@ -499,6 +499,7 @@ function startTimer() {
     // הזמן נגמר!
     else {
         clearInterval(startTimer);
+        timeOver("practice");
     }
 }
 
@@ -575,19 +576,23 @@ function nextQuestionPractice() {
         else {
             createMultipleCard();
         }
-        document.querySelector(".page.practice .first-question").style.transform = "translateX(108vw)";
-        document.querySelector(".page.practice .first-question").style.transition = "all 0.7s ease";
-        document.querySelector(".page.practice .first-question").style.position = "absolute";
+
+        document.querySelector(".page.practice .first-question").classList.add("transition");
+        let firstCard = document.querySelector(".page.practice .transition");
+        firstCard.style.transform = "translateX(108vw)";
+        firstCard.style.transition = "transform 0.7s ease";
+        firstCard.style.position = "absolute";
+
         setTimeout(function () {
-            document.querySelector(".page.practice .first-question").remove();
-            document.querySelector(".page.practice .first-question").style.transform = "unset";
-            document.querySelector(".page.practice .first-question").style.transition = "unset";
-            document.querySelector(".page.practice .first-question").style.position = "unset";
+            firstCard.remove();
+            firstCard.style.transition = "unset";
+            firstCard.style.transform = "unset";
+            firstCard.style.position = "unset";
             addEventListenersPractice();
         }, 700);
 
-        document.querySelector(".page.practice .second-question").style.transition = "all 0.7s ease";
         document.querySelector(".page.practice .second-question").classList.add("first-question");
+        document.querySelector(".page.practice .second-question").style.transition = "transform 0.7s ease";
         document.querySelector(".page.practice .second-question").classList.remove("second-question");
 
         document.querySelector(".page.practice .third-question").classList.add("second-question");
@@ -651,9 +656,9 @@ function addEventListenersPractice() {
 
 // מוסיף פופאפ סיום עם סיכום התוצאות
 function endPractice() {
-    document.querySelector(".page.practice .title").style.filter = "blur(10px)";
-    document.querySelector(".page.practice .score").style.filter = "blur(10px)";
-    document.querySelector(".page.practice .back-btn").style.filter = "blur(10px)";
+    document.querySelector(".page.practice .title").style.filter = `blur(${blurAmount})`;
+    document.querySelector(".page.practice .score").style.filter = `blur(${blurAmount})`;
+    document.querySelector(".page.practice .back-btn").style.filter = `blur(${blurAmount})`;
 
     avgTimeForQusetion = sumTimeForQeustions / QUESTIONS.length;
     avgTimeForQusetion = avgTimeForQusetion.toFixed(2);
@@ -725,9 +730,10 @@ function endPractice() {
     });
 }
 
-
+// הפונקציה מאתחלת את מסך התרגול ומקבלת ערך "אמת" אם התרגול נערך עד הסוף ובמידה ולא תקבל את הערך "שקר".
 function resetPrecticePage(finishPractice = false) {
-    // האם התרגול נגמר
+    practiceSeconds = AMOUNT_OF_TIME_TO_QUESTION;
+    // האם התרגול לא נגמר
     if (!finishPractice) {
         clearInterval(timer);
         document.querySelector(".page.practice .container-questions").innerHTML = "";
@@ -823,11 +829,11 @@ function showAnswer() {
 
 // פופאפ לפני המבחן
 function beforeExam() {
-    document.querySelector(".page.learning.subjects .title").style.filter = "blur(10px)";
-    document.querySelector(".page.learning.subjects .sub-title").style.filter = "blur(10px)";
-    document.querySelector(".page.learning.subjects .cards-container").style.filter = "blur(10px)";
-    document.querySelector(".page.learning.subjects .back-btn").style.filter = "blur(10px)";
-    document.querySelector(".page.learning.subjects .buttons").style.filter = "blur(10px)";
+    document.querySelector(".page.learning.subjects .title").style.filter = `blur(${blurAmount})`;
+    document.querySelector(".page.learning.subjects .sub-title").style.filter = `blur(${blurAmount})`;
+    document.querySelector(".page.learning.subjects .cards-container").style.filter = `blur(${blurAmount})`;
+    document.querySelector(".page.learning.subjects .back-btn").style.filter = `blur(${blurAmount})`;
+    document.querySelector(".page.learning.subjects .buttons").style.filter = `blur(${blurAmount})`;
 
 
     let popup =
@@ -932,11 +938,11 @@ function beforeExam() {
 
 // הפונקציה מקבלת את העמוד הנוכחי ויוצאת מ
 function exit(page) {
-    document.querySelector(`.page.${page} .title`).style.filter = "blur(10px)";
-    document.querySelector(`.page.${page} .sub-titles`).style.filter = "blur(10px)";
-    document.querySelector(`.page.${page} .questions-container`).style.filter = "blur(10px)";
-    document.querySelector(`.page.${page} .back-btn`).style.filter = "blur(10px)";
-    document.querySelector(`.page.${page} .questions-number`).style.filter = "blur(10px)";
+    document.querySelector(`.page.${page} .title`).style.filter = `blur(${blurAmount})`;
+    document.querySelector(`.page.${page} .sub-titles`).style.filter = `blur(${blurAmount})`;
+    document.querySelector(`.page.${page} .questions-container`).style.filter = `blur(${blurAmount})`;
+    document.querySelector(`.page.${page} .back-btn`).style.filter = `blur(${blurAmount})`;
+    document.querySelector(`.page.${page} .questions-number`).style.filter = `blur(${blurAmount})`;
 
     let popup =
         El("div", { cls: "dark" },
@@ -1041,7 +1047,7 @@ function examPage() {
             attributes: { class: "back-btn", src: "../assets/images/general/back_btn.svg" },
             listeners: {
                 click: function () {
-                    exit("exam")
+                    exit("exam");
                 }
             }
         });
@@ -1073,10 +1079,6 @@ function examPage() {
                         }
                         else if (previousQuestion > i) {
                             moveBack();
-                        }
-                        // אם הלחיצה קרתה בעת בדיקת התשובותד
-                        if (document.querySelector(".page.exam.done")) {
-                            showAnswersExam();
                         }
                     }
                 }
@@ -1202,15 +1204,19 @@ function ifAnswer() {
 function addEventListenersAnswersEXAM() {
     // נכון לא נכון
     if (QUESTIONS[currentQuestionExam].type === "binary") {
-        document.querySelector(".page.exam .first-card .right-ans").addEventListener("click", selectAns);
-        document.querySelector(".page.exam .first-card .wrong-ans").addEventListener("click", selectAns);
+        if (!document.querySelector(".page.exam.done")) {
+            document.querySelector(".page.exam .first-card .right-ans").addEventListener("click", selectAns);
+            document.querySelector(".page.exam .first-card .wrong-ans").addEventListener("click", selectAns);
+        }
     }
     // אמריקאי
     else {
         // מוסיף לכל התשובות מאזין לחיצה
         let selectedAns = document.querySelectorAll(".page.exam .first-card .answer-container");
         for (let countAns = 0; countAns < 4; countAns++) {
-            selectedAns[countAns].addEventListener("click", selectAns);
+            if (!document.querySelector(".page.exam.done")) {
+                selectedAns[countAns].addEventListener("click", selectAns);
+            }
         }
     }
 }
@@ -1324,6 +1330,10 @@ function moveBack() {
 }
 
 function nextQuestionExam() {
+    document.querySelector(".page.exam .number-container.active").classList.remove("active");
+    document.querySelector(".page.exam .first-card").classList.add("transition");
+    createQuestionExam();
+
     // היעלמות הכרטיסייה העליונה
     setTimeout(function () {
         document.querySelector(".page.exam .first-card").remove();
@@ -1332,18 +1342,13 @@ function nextQuestionExam() {
         document.querySelector(".page.exam .first-card").classList.remove("transition");
 
         // בודק האם כל השאלות נענו, ובהתאם משאיר את כפתור ההגש
-        ifComplete(); // יש בעיה - זה מופיע אחרי שנייה. עזרה של פלג
+        ifComplete();
+        if (document.querySelector(".page.exam.done"))
+            showAnswersExam();
     }, 1000);
-
-    document.querySelector(".page.exam .number-container.active").classList.remove("active");
-    document.querySelector(".page.exam .first-card").classList.add("transition");
-    createQuestionExam();
 
     // בודק האם השאלה שהגענו אליה כבר נענתה
     ifAnswer();
-
-    // // בודק האם כל השאלות נענו, ובהתאם משאיר את כפתור ההגש
-    // ifComplete();
 }
 
 // פונקציה שסופרת לאחור את הסמן לסוף המבחן
@@ -1354,6 +1359,7 @@ function startTimerExam() {
         // בודק האם הגיע לסוף הזמן
         if (examMinutes === 0) {
             clearInterval(timerExam);
+            timeOver("exam");
             return;
         }
         // עברה דקה
@@ -1402,10 +1408,10 @@ function checkAnswer() {
 function endExam(amountOfCorrectAnswers) {
     clearInterval(timerExam);
 
-    document.querySelector(".page.exam .header").style.filter = "blur(10px)";
-    document.querySelector(".page.exam .questions-number").style.filter = "blur(10px)";
-    document.querySelector(".page.exam .questions-container").style.filter = "blur(10px)";
-    document.querySelector(".page.exam .back-btn").style.filter = "blur(10px)";
+    document.querySelector(".page.exam .header").style.filter = `blur(${blurAmount})`;
+    document.querySelector(".page.exam .questions-number").style.filter = `blur(${blurAmount})`;
+    document.querySelector(".page.exam .questions-container").style.filter = `blur(${blurAmount})`;
+    document.querySelector(".page.exam .back-btn").style.filter = `blur(${blurAmount})`;
 
     // חישוב כמה דקות היה המבחן
     let minutes = EXAM_MINUTS - examMinutes;
@@ -1511,6 +1517,7 @@ function endExam(amountOfCorrectAnswers) {
         document.querySelector(".page.exam").classList.add("done");
         let examStatus = "view";
         resetExamPage(examStatus);
+
         document.querySelector(".page.exam .header").style.filter = "unset";
         document.querySelector(".page.exam .questions-number").style.filter = "unset";
         document.querySelector(".page.exam .questions-container").style.filter = "unset";
@@ -1527,9 +1534,18 @@ function endExam(amountOfCorrectAnswers) {
         document.querySelector(".page.exam .back-btn").src = "../assets/images/exam/toHome_btn.svg";
         document.querySelector(".page.exam .back-btn").classList.add("backHome-btn");
 
-        // גילוי תשובות נכונות וטעויות
-        showQuestionsValidity();
+        // ifComplete();
+        // גילוי תשובות נכונות וטעויות על הכרטסיות
         showAnswersExam();
+        //גילוי עיגול אדום או ירוק לפי התשובה על הניווט התחתון עם המספרים
+        showQuestionsValidity();
+        //
+        ifAnswer();
+
+        console.log("in!!4");
+
+        // document.querySelector(`.page.exam #num${currentQuestionExam + 1} > .number-text`).classList.add("active");
+
     });
 
     // מעבר לדף הבית בלחיצה על הכפתור
@@ -1541,6 +1557,7 @@ function endExam(amountOfCorrectAnswers) {
 
 // מאתחלת את מצב המבחן לפי ההכפתור עליו לחץ החניך
 function resetExamPage(examStatus) {
+    document.querySelector(`.page.exam #num${currentQuestionExam + 1}`).classList.remove("active");
     // איפוס השאלה הנוכחית 
     currentQuestionExam = 0;
 
@@ -1548,7 +1565,6 @@ function resetExamPage(examStatus) {
     switch (examStatus) {
         // החניך סיים את המבחן
         case "end": {
-
             document.querySelector(".page.exam .back-btn").remove();
             document.querySelector(".page.exam").classList.remove("active");
             document.querySelector(".page.learning.subjects").classList.add("active");
@@ -1557,7 +1573,6 @@ function resetExamPage(examStatus) {
             clearInterval(timer);
             document.querySelector(".page.exam .questions-container").innerHTML = "";
             document.querySelector(".page.exam .questions-number").innerHTML = "";
-            document.querySelector(".page.exam .questions-container").style.pointerEvents = "all";
             break;
         }
         // החניך יצא באמצע המבחן
@@ -1569,28 +1584,16 @@ function resetExamPage(examStatus) {
 
             document.querySelector(".page.exam").classList.remove("active");
             document.querySelector(".page.learning.subjects").classList.add("active");
-            clearInterval(timer);
             document.querySelector(".page.exam .questions-container").innerHTML = "";
             document.querySelector(".page.exam .questions-number").innerHTML = "";
+            if (document.querySelector(".page.exam.done"))
+                document.querySelector(".page.exam.done").classList.remove("done");
             break;
         }
         // החניך בחר לראות את תוצאות המבחן
-        default: {
-            ////// לתקן את כל הבעיות שפה הצילו///////
-
+        case "view": {
             document.querySelector(".page.exam").classList.add("done");
             ifComplete();
-
-            document.querySelector(".page.exam .questions-container").style.pointerEvents = "none";
-            document.querySelector(".page.exam .next-back-btn").style.pointerEvents = "all";
-
-            for (let i = 0; i < QUESTIONS.length; i++) {
-                document.querySelector(".page.exam .number-text").style.opacity = "0.3";
-                // document.querySelector(".page.exam .number-text").style.opacity = "0.6";
-                /*********************** */
-
-            }
-
             break;
         }
     }
@@ -1599,15 +1602,11 @@ function resetExamPage(examStatus) {
         document.querySelector(".page.exam .header").style.filter = "unset";
         document.querySelector(".page.exam .questions-number").style.filter = "unset";
         document.querySelector(".page.exam .questions-container").style.filter = "unset";
-        // document.querySelector(".page.exam .back-btn").style.filter = "unset";
     }
 }
 
 // הפונקציה מופעלת לאחר לחיצה על כפתור עיון במבחן ומוסיפה לכל שאלה את התשובה שלה
 function showAnswersExam() {
-    /// לעשות שהתשובה שהחניך סימן תיראה בעין
-    /// לסיים את החלק של האמריקאי
-
     let correctAns;
     // בודק האם השאלה הנוכחית היא בינרית
     if (QUESTIONS[currentQuestionExam].type === "binary") {
@@ -1616,13 +1615,13 @@ function showAnswersExam() {
         if (examAnswers[currentQuestionExam] === correctAns) {
             // green line
             let greenLine = El("img", { attributes: { src: "../assets/images/general/rightAnswer.svg" }, cls: "line" });/////////////
-            document.querySelector(".question").after(greenLine);
+            document.querySelector(".page.exam .first-card .question").after(greenLine);
         }
         // התשובה לא נכונה
         else {
             // red line
             let redLine = El("img", { attributes: { src: "../assets/images/general/wrongAnswer.svg" }, cls: "line" });/////////////
-            document.querySelector(".question").after(redLine);
+            document.querySelector(".page.exam .first-card .question").after(redLine);
         }
     }
     // אמריקאי
@@ -1642,15 +1641,21 @@ function showAnswersExam() {
 // למספרי השאלות בתחתית העמוד יתווסף נקודה אדומה במידה והחניך טעה בשאלה, ונקודה ירוקה במידה וצדק בה 
 function showQuestionsValidity() {
     for (let i = 0; i < QUESTIONS.length; i++) {
-
-        if (examAnswers[i] === (QUESTIONS[i].trueOrFalse || QUESTIONS[i].correctAns)) {
-
-            document.querySelector(`#num${i + 1}`).append(El("div", { classes: ["circle", "correct"] }));
+        // השאלה הנוכחית היא מסוג נכון לא נכון
+        if (QUESTIONS[i].trueOrFalse !== undefined) {
+            if (examAnswers[i] === QUESTIONS[i].trueOrFalse)
+                document.querySelector(`#num${i + 1}`).append(El("div", { classes: ["circle", "correct"] }));
+            else
+                document.querySelector(`#num${i + 1}`).append(El("div", { classes: ["circle", "wrong"] }));
         }
+        // השאלה הנוכחית היא שאלה מסוג אמריקאית
         else {
-            document.querySelector(`#num${i + 1}`).append(El("div", { classes: ["circle", "wrong"] }));
-        }
+            if (examAnswers[i] === Number(QUESTIONS[i].correctAns.slice(-1) - 1))
+                document.querySelector(`#num${i + 1}`).append(El("div", { classes: ["circle", "correct"] }));
+            else
+                document.querySelector(`#num${i + 1}`).append(El("div", { classes: ["circle", "wrong"] }));
 
+        }
     }
 }
 // -------------------------------------------------------------------------------------
@@ -1708,7 +1713,13 @@ function subjectLearningPage(subject) {
                     El("div", { cls: "sub-title" }, sub),
                 ),
                 // יוצר מערך של אלמנטים ומעביר כל אלמנט בנפרד מחוץ למערך (...=)
-                ...subSubTopics.map(subSubTopic => El("div", { cls: "sub-sub-topic" }, subSubTopic))
+                ...subSubTopics.map(
+                    subSubTopic => El("div", {
+                        attributes: { cls: "sub-sub-topic" },
+                        listeners: { click: () => { relevantCard(subSubTopic) } }
+                    }, subSubTopic
+                    )
+                )
             );
         subTopic.typeIndex = id;
 
@@ -1733,6 +1744,17 @@ function subjectLearningPage(subject) {
         });
         document.querySelector(".page.learning.content .cards-container").append(...arrCards);
         id++;
+    }
+
+    // הפונקציה גוללת אל הכרטיסייה הנלחצת על ידי החניך 
+    function relevantCard(cardTitle) {
+        document.querySelectorAll(".page.learning.content .card-group.block").forEach(function (card) {
+            if (card.querySelector(".title").textContent === cardTitle) {
+                console.log(cardTitle);
+                console.log(card);
+                card.scrollIntoView({ behavior: "smooth", block: "center" });
+            }
+        })
     }
 
     // יוצר כרטיסייה חדשה
@@ -1798,10 +1820,13 @@ function subjectLearningPage(subject) {
     // התת נושא שבמרכז העמוד
     let midElement;
 
+
     // מאזין לגלילה של התתי נושאים, הופך את הנושאים שלא ממורכזים לבעלי שקיפות
     document.querySelector(".page.learning.content .container-subjects").addEventListener("scroll", function () {
         let midPage = window.innerWidth / 2;
         let smallestDifference = 1000;
+        let count = 0;
+
         for (let sub of this.children) {
             let pos = sub.getBoundingClientRect();
             let positionX = (pos.x + pos.right) / 2;
@@ -1815,15 +1840,31 @@ function subjectLearningPage(subject) {
                 }
                 smallestDifference = Math.abs(midPage - positionX);
                 midElement = sub;
+                midElPlace = count;
             }
+            count++;
             sub.style.opacity = "0.6";
         }
         midElement.style.opacity = "";
-        document.querySelector(".page.learning.content .cards-container").scrollTop = 0;
-        document.querySelectorAll(".page.learning.content .card-group").forEach(el => el.style.display = "");
-        setTimeout(function () {
-            document.querySelectorAll(`.page.learning.content .card-group.sub-${midElement.typeIndex}`).forEach(el => el.style.display = "block");
-        }, 1)
+        console.log(midElPlace);
+
+        let cardGroup = document.querySelectorAll(".page.learning.content .card-group");
+
+        // האם התת נושא שנמצא כרגע באמצע המסך לא שווה לנושא שאמור להיות כרגע באמצע
+        // אז התנאי יוסיף את כרטיסיות הלימוד הרלוונטיות
+        if (midElPlace !== currSubjCount) {
+            currSubjCount = midElPlace;
+            document.querySelector(".page.learning.content .cards-container").scrollTop = 0;
+            document.querySelectorAll(".page.learning.content .card-group").forEach(el => el.style.display = "");
+
+            // הורדת הבלוק על כל הכרטיסיות בכל התת נושאים
+            for (let i = 0; i < cardGroup.length; i++) {
+                if (cardGroup[i].classList.contains("block"))
+                    cardGroup[i].classList.remove("block");
+            }
+            // הוספת הבלוק לכרטיסיות הרלוונטיות לפי תת הנושא
+            document.querySelectorAll(`.page.learning.content .card-group.sub-${midElement.typeIndex}`).forEach(el => el.classList.add("block"));
+        }
     }, { passive: true });
 
     // הוספת מאזין לחיצה בעבור כל תת נושא, ובלחיצה על נושא שאינו במרכז, הפונקציה תעבור אליו בצורה חלקה ויפהה
@@ -1831,7 +1872,7 @@ function subjectLearningPage(subject) {
         el.addEventListener("click",
             /**
              * @this {HTMLElement}
-             */
+            */
             function () {
                 // בודק אם התת נושא הקודם כבר היה לחוץ
                 let el = document.querySelector(".sub-topics-container.open");
@@ -1856,20 +1897,20 @@ function subjectLearningPage(subject) {
 
 // ניקוי עמוד הלמידה לאחר יציאה ממנו
 function resetLearningPage() {
+    currSubjCount = -1;
     document.querySelector(".page.learning.content .cards-container").innerHTML = "";
     document.querySelector(".page.learning.content .container-subjects").remove();
     document.querySelector(".page.learning.content .practice-btn").remove();
     document.querySelector(".page.learning.content .back-btn").remove();
-
 }
 
 //
 function practicePopup(subject) {
-    document.querySelector(".page.learning.content .title").style.filter = "blur(10px)";
-    document.querySelector(".page.learning.content .container-subjects").style.filter = "blur(10px)";
-    document.querySelector(".page.learning.content .practice-btn").style.filter = "blur(10px)";
-    document.querySelector(".page.learning.content .back-btn").style.filter = "blur(10px)";
-    document.querySelector(".page.learning.content .cards-container").style.filter = "blur(10px)";
+    document.querySelector(".page.learning.content .title").style.filter = `blur(${blurAmount})`;
+    document.querySelector(".page.learning.content .container-subjects").style.filter = `blur(${blurAmount})`;
+    document.querySelector(".page.learning.content .practice-btn").style.filter = `blur(${blurAmount})`;
+    document.querySelector(".page.learning.content .back-btn").style.filter = `blur(${blurAmount})`;
+    document.querySelector(".page.learning.content .cards-container").style.filter = `blur(${blurAmount})`;
     let popup =
         El("div", { cls: "dark" },
             // כל הקלף
@@ -1960,6 +2001,121 @@ function theChosenSub(subject) {
 // -------------------------------------------------------------------------------------
 // -------------------------------------------------------------------------------------
 // -------------------------------------------------------------------------------------
+
+// הפונקצייה מוסיפה 
+function timeOver(page) {
+    // עצירת הטיימר
+    if (page === "practice") {
+        clearInterval(timer);
+    }
+    // החניך היה באמצע מבחן
+    else {
+        // איפוס הזמן
+        clearInterval(timerExam);
+    }
+
+    // הוספה לרקע טשטוש
+    document.querySelector(`.page.${page} .title`).style.filter = `blur(${blurAmount})`;
+    document.querySelector(`.page.${page} .back-btn`).style.filter = `blur(${blurAmount})`;
+    if (page === "practice") {
+        document.querySelector(`.page.${page} .score`).style.filter = `blur(${blurAmount})`;
+        document.querySelector(`.page.${page} .container-questions`).style.filter = `blur(${blurAmount})`;
+        document.querySelector(`.page.${page} .buttons`).style.filter = `blur(${blurAmount})`;
+    }
+    else {
+        document.querySelector(`.page.${page} .questions-container`).style.filter = `blur(${blurAmount})`;
+        document.querySelector(`.page.${page} .questions-number`).style.filter = `blur(${blurAmount})`;
+        document.querySelector(`.page.${page} .sub-titles`).style.filter = `blur(${blurAmount})`;
+    }
+
+    // הוספת פופאפ
+    let popup =
+        El("div", { cls: "dark" },
+            El("div", { cls: "exit-popup", },
+                El("div", { cls: "title-popup" }, "נגמר הזמן..."),
+                El("div", { cls: "sub-title-popup" }, "פעם הבאה ענו קצת יותר מהר:)"),
+                El("div", { cls: "buttons-exit-popup" },
+                    // כפתור חזרה למסך הבית
+                    El("img", {
+                        attributes: {
+                            src: "../assets/images/general/leavePracticeOrExam_popup/back.svg", class: "button-popup",
+                        }, listeners: {
+                            click: function () {
+                                // כפתור יציאה מהתרגול או מהמבחן למסך הבית
+                                document.querySelector(`.page.${page} .title`).style.filter = "unset";
+                                document.querySelector(`.page.${page} .back-btn`).style.filter = "unset";
+                                if (page === "practice") {
+                                    document.querySelector(`.page.${page} .score`).style.filter = "unset";
+                                    document.querySelector(`.page.${page} .container-questions`).style.filter = "unset";
+                                    document.querySelector(`.page.${page} .buttons`).style.filter = "unset";
+                                }
+                                else {
+                                    document.querySelector(`.page.${page} .questions-container`).style.filter = "unset";
+                                    document.querySelector(`.page.${page} .questions-number`).style.filter = "unset";
+                                    document.querySelector(`.page.${page} .sub-titles`).style.filter = "unset";
+                                }
+                                document.querySelector(".page .dark").remove();
+                                document.querySelector(`.page.${page}`).classList.remove("active");
+                                document.querySelector(`.page.learning.subjects`).classList.add("active");
+
+                                if (page === "exam") {
+                                    let examStatus = "quit";
+                                    resetExamPage(examStatus);
+                                }
+                                else {
+                                    resetPrecticePage(false);
+                                }
+                            }
+                        }
+                    }),
+                    // כפתור חזרה לניסיון נוסף לתרגול או המבחן
+                    El("img", {
+                        attributes: {
+                            src: "../assets/images/general/tryAgainBtn.svg", class: "button-popup"
+                        }, listeners: {
+                            click: function () {
+                                // חזרה על המבחן או התרגול
+                                document.querySelector(`.page.${page} .title`).style.filter = "unset";
+                                document.querySelector(`.page.${page} .back-btn`).style.filter = "unset";
+                                if (page === "practice") {
+                                    document.querySelector(`.page.${page} .score`).style.filter = "unset";
+                                    document.querySelector(`.page.${page} .container-questions`).style.filter = "unset";
+                                    document.querySelector(`.page.${page} .buttons`).style.filter = "unset";
+                                }
+                                else {
+                                    document.querySelector(`.page.${page} .questions-container`).style.filter = "unset";
+                                    document.querySelector(`.page.${page} .questions-number`).style.filter = "unset";
+                                    document.querySelector(`.page.${page} .sub-titles`).style.filter = "unset";
+                                }
+                                document.querySelector(".page .dark").remove();
+                                // החניך היה באמצע תרגול
+                                if (page === "practice") {
+                                    practiceSeconds = AMOUNT_OF_TIME_TO_QUESTION;
+                                    resetPrecticePage(false);
+                                    practicePage();
+                                }
+                                // החניך היה באמצע מבחן
+                                else {
+                                    // איפוס השאלה הנוכחית 
+                                    currentQuestionExam = 0;
+                                    document.querySelector(".page.exam .questions-container").innerHTML = "";
+                                    document.querySelector(".page.exam .questions-number").innerHTML = "";
+                                    document.querySelector(".page.exam .back-btn").remove();
+                                    examPage();
+                                }
+                            }
+                        }
+                    })
+                )
+            )
+
+        )
+    document.querySelector(`.page.${page}`).append(popup);
+}
+
+
+// -------------------------------------------------------------------------------------
+// -------------------------------------------------------------------------------------
 // -------------------------------------------------------------------------------------
 // -------------------------------------------------------------------------------------
 
@@ -1981,3 +2137,5 @@ function shuffle(arr) {
     }
     return arr;
 }
+
+

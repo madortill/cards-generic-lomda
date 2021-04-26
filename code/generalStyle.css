@@ -71,8 +71,8 @@ body {
 .close-btn {
   position: absolute;
   height: 4vw;
-  right: 2.5vh;
-  top: 5vh;
+  right: 1em;
+  top: 2.2em;
 }
 
 /*פופאפ לסוף התרגול והמבחן*/
@@ -104,8 +104,8 @@ body {
 
 .page .title-popup {
   font-weight: 800;
-  font-size: 1.5em;
-  margin-top: 15vw;
+  font-size: 7vmin;
+  margin-top: 2em;
   margin-bottom: 2vw;
 }
 
@@ -179,7 +179,6 @@ body {
 .page .card,
 .page .buttons {
   max-width: 87vw;
-  width: 46vh;
 }
 
 .page .card>img {
@@ -198,7 +197,7 @@ body {
 
 .page .question {
   font-weight: 800;
-  font-size: 6.5vmin;
+  font-size: 1.2em;
 }
 
 .page .right-ans,
@@ -214,7 +213,7 @@ body {
 
 .page .binary .line+.ans-container,
 .page .line+.ans-container {
-  margin-top: 0;
+  margin-top: -0.6em;
 }
 
 .page .binary .ans-container {
@@ -223,20 +222,19 @@ body {
 
 .page .binary .line,
 .page .line {
-  margin-top: 1.5vw;
-  height: 0.7vw;
+  margin-top: 0.4em;
+  height: 0.2em;
   display: block;
   transform-origin: right;
   animation: line-expand 0.25s ease-in-out;
+  width: 90%;
 }
-
-
 
 /*לפני המבחן*/
 .page .exam-popup {
   color: rgb(27, 62, 84);
-  width: 72vw;
-  height: 131vw;
+  width: 18em;
+  height: 32em;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
@@ -256,8 +254,7 @@ body {
 }
 
 .page .text {
-  font-size: 1em;
-  ;
+  font-size: 4vmin;
 }
 
 .page .icon1 {
@@ -281,16 +278,15 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  height: 60%;
-  width: 69%;
+  height: 54em;
+  width: 13em;
 }
 
 .page .start-btn {
   width: 28vw;
-  margin-bottom: 8vw;
-  margin-top: 2vw;
+  margin-bottom: 2em;
+  margin-top: 0.5em;
 }
-
 
 /* יציאה ממבחן או תרגול פופאפ */
 .page .exit-popup {
@@ -349,7 +345,6 @@ body {
   align-items: center;
   width: 100%;
 }
-
 
 /*  */
 .page .beforePractice-instruction-container {

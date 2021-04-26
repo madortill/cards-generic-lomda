@@ -16,48 +16,48 @@
 }
 
 .page.learning.subjects .sub-title {
-  font-size: 4.5vw;
-  margin-top: 4vw;
+  font-size: 5vmin;
+  margin-top: 0.3em;
+  text-align: center;
 }
 
 .page.learning.subjects .cards-container {
-  width: 100%;
-  margin-top: 10%;
+  margin-top: 1em;
   display: flex;
   /* overflow-y: auto;  למחשב זה אולי אופציה טובה */
   flex-wrap: wrap;
   justify-content: center;
-  margin-bottom: 11vw;
+  margin-bottom: 8em;
 }
 
 .page.learning.subjects .learningCard {
   background-image: url("../assets/images/learning/subject_btn.svg");
   background-repeat: no-repeat;
   background-size: 100% 100%;
-  height: 53vw;
-  width: 80vw;
-  margin-bottom: 9%;
+  height: 12em;
+  width: 17em;
   display: flex;
   flex-direction: column;
   align-items: center;
+  font-size: 4.5vmin;
 }
 
 .page.learning.subjects .icon {
-  width: 8vw;
+  width: 2em;
   position: relative;
-  top: 13vw;
-  left: 1.5%;
+  top: 3em;
+  left: 0.4em;
 }
 
 .page.learning.subjects .subject {
   color: hsl(203, 50%, 22%);
-  font-size: 6vw;
+  font-size: 1.4em;
   display: flex;
   justify-content: center;
   position: relative;
-  left: 1.5%;
-  width: 80%;
-  top: 17vw;
+  left: 0.17em;
+  width: 10.2em;
+  top: 2.8em;
   text-align: center;
 }
 
@@ -409,4 +409,8 @@
 
 .page.learning.content .card.prev {
   transform: translateX(100vw);
+}
+
+.page.learning.content .block {
+  display: block;
 }

@@ -23,11 +23,11 @@
 
 .page.learning.subjects .cards-container {
   margin-top: 1em;
-  display: flex;
-  /* overflow-y: auto;  למחשב זה אולי אופציה טובה */
-  flex-wrap: wrap;
-  justify-content: center;
-  margin-bottom: 8em;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-bottom: 8em;
+    overflow: auto;
 }
 
 .page.learning.subjects .learningCard {

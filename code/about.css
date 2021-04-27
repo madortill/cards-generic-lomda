@@ -10,13 +10,12 @@
 .page.about .card-container {
   position: relative;
   width: 41vmax;
-  /* flex: 1; */
-  margin: 5vh 0;
+  margin: 1vh 0;
 }
 
 .page.about .about_header {
-  height: 7.5vmax;
-  /* margin-top: 0.2em; */
+  height: 8.5vmax;
+  margin-top: 2em;
 }
 
 .page.about .card {

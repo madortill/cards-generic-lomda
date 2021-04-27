@@ -44,13 +44,30 @@ window.addEventListener("load", function () {
     // כותרת ראשית ללומדה
     addTitle();
 
+    let fullScreen = El("div", {cls: "full-screen"});
+    document.querySelector(".page.opening").before(fullScreen);
+    fullScreen.addEventListener("click", homePage);
+
+    // document.querySelector(".main").parentNode.insertBefore(fullScreen, main);
+
+    // מעבר בין עמוד הבית לעמוד הלמידה
+    let scrollingIcon = El("img", {attributes: {class:"scrolling_icon", src: "../assets/images/opening/scrolling_icon.svg"}});
+    document.querySelector(".page.opening .container-scrolling_icon").append(scrollingIcon); 
     // הפעלה של האנימציה בלחיצה
     document.querySelector(".page.opening  .expand").style.transition = "all 1s ease";
-    document.querySelector(".page.opening .scrolling_icon").addEventListener("click", homePage);
+    // document.querySelector(".page.opening .scrolling_icon").addEventListener("click", homePage);
 
     // מעבר לדף הבית
-    document.querySelector(".main").addEventListener("scroll", homePage, false);
+    // document.querySelector(".main").addEventListener("scroll", homePage, false);
 });
+
+// מעבר למסך הנושאים ללמידה. זה הפעם השנייה שלוחצים
+// function scrollingIconSecond() {
+//     document.querySelector(".page.opening").classList.remove("active");
+//     document.querySelector(".page.home").classList.remove("active");
+//     document.querySelector(".page.learning.subjects").classList.add("active");
+//     learningSubjectsPage();
+// }
 
 // מעבר לדף הבית
 /**
@@ -58,32 +75,64 @@ window.addEventListener("load", function () {
  * @param {Event} event 
  */
 function homePage(event) {
+    document.querySelector(".full-screen").remove();
     document.querySelector(".main").removeEventListener("scroll", homePage, false);
+    
     document.querySelector(".main").style.overflow = "hidden";
     document.querySelector(".page.home .books").style.display = "block";
     document.querySelector(".page.home .textArea").style.display = "block";
     document.querySelector(".page.opening").classList.add("scrolled");
-
+    
     document.querySelector(".page.home .about").style.display = "block";
     document.querySelector(".page.home .about").addEventListener("click", aboutPage);
-
-    // מעבר בין עמוד הבית לעמוד הלמידה
-    document.querySelector(".page.opening .scrolling_icon").addEventListener("click", () => {
+    
+    let fullScreen = El("div", {cls: "full-screen"});
+    document.querySelector(".page.opening").before(fullScreen);
+    // מעבר לדף הבית
+    document.querySelector(".full-screen").addEventListener("click", ()=> {
+        document.querySelector(".full-screen").remove();
         document.querySelector(".page.opening").classList.remove("active");
         document.querySelector(".page.home").classList.remove("active");
         document.querySelector(".page.learning.subjects").classList.add("active");
         learningSubjectsPage();
     });
+
+    // document.querySelector(".main").addEventListener("click", () => {
+    //     if (this ==! document.querySelector(".page.home .about")) {}
+    //         scrollingIconSecond();
+    // });
+
+    // // מעבר בין עמוד הבית לעמוד הלמידה
+    // let scrollingIcon = El("img", {attributes: {class:"scrolling_icon", src: "../assets/images/opening/scrolling_icon.svg"},
+    // listeners: {
+    //     click: () => {
+    //         document.querySelector(".page.opening").classList.remove("active");
+    //         document.querySelector(".page.home").classList.remove("active");
+    //         document.querySelector(".page.learning.subjects").classList.add("active");
+    //         learningSubjectsPage();
+    //     }
+    // }});
+    // document.querySelector(".page.opening .container-scrolling_icon").append(scrollingIcon); 
+
+
+    // document.querySelector(".page.opening .scrolling_icon").addEventListener("click", () => {
+    //     document.querySelector(".page.opening").classList.remove("active");
+    //     document.querySelector(".page.home").classList.remove("active");
+    //     document.querySelector(".page.learning.subjects").classList.add("active");
+    //     learningSubjectsPage();
+    // });
 }
 
 
 // מעבר לאודות
 function aboutPage(event) {
+    document.querySelector(".full-screen").style.visibility = "hidden";
     document.querySelector(".page.opening").classList.remove("active");
     document.querySelector(".page.home").classList.remove("active");
     document.querySelector(".page.about").classList.add("active");
     // מעבר לדף הבית
     document.querySelector(".page.about .back-btn").addEventListener("click", () => {
+        document.querySelector(".full-screen").style.visibility = "visible";
         document.querySelector(".page.opening").classList.add("active");
         document.querySelector(".page.home").classList.add("active");
         document.querySelector(".page.about").classList.remove("active");
@@ -98,11 +147,35 @@ function aboutPage(event) {
 // -------------------------------------------------------------------------------------
 // אתחול עמוד הנושאים ללמידה
 function learningSubjectsPage() {
-    document.querySelector(".page.learning.subjects .back-btn").addEventListener("click", () => {
-        document.querySelector(".page.learning.subjects").classList.remove("active");
-        document.querySelector(".page.opening").classList.add("active");
-        document.querySelector(".page.home").classList.add("active");
+    document.querySelector(".page.opening").classList.remove("active");
+    document.querySelector(".page.home").classList.remove("active");
+    document.querySelector(".page.learning.subjects").classList.add("active"); //// מעכשיו 27/4
+    //  הוספת כפתור חזרה למסך נושאי הלמידה
+    let backBtn =
+    El("img", {
+        attributes: { class: "back-btn", src: "../assets/images/general/back_btn.svg" },
+        listeners: {
+            click: function () {
+                document.querySelector(".page.learning.subjects  .cards-container").innerHTML = "";
+                document.querySelector(".page.learning.subjects").classList.remove("active");
+                document.querySelector(".page.learning.subjects .back-btn").remove();
+                document.querySelector(".page.opening").classList.add("active");
+                document.querySelector(".page.home").classList.add("active");
+                let fullScreen = El("div", {cls: "full-screen"});
+                document.querySelector(".page.opening").before(fullScreen);
+                // מעבר לדף הבית
+                document.querySelector(".full-screen").addEventListener("click", ()=> {
+                    document.querySelector(".full-screen").remove();
+                    document.querySelector(".page.opening").classList.remove("active");
+                    document.querySelector(".page.home").classList.remove("active");
+                    document.querySelector(".page.learning.subjects").classList.add("active");
+                    learningSubjectsPage();
+                });
+            }
+        }
     });
+    document.querySelector(".page.learning.subjects").append(backBtn);
+
 
     // יוצר את הכרטיסיות של נושאי הלימוד
     for (let subject of SUBJECTS_TITLES) {
@@ -390,12 +463,6 @@ function practicePage(event) {
             }
         });
     document.querySelector(".page.practice").append(backBtn);
-
-    // document.querySelector(".page.practice .back-btn").addEventListener("click", () => {
-    //     document.querySelector(".page.learning.subjects").classList.remove("active");
-    //     document.querySelector(".page.learning.subjects").classList.add("active");
-    //     // resetPrecticePage();
-    // });
 }
 
 function halfHalfBTN_mode() {

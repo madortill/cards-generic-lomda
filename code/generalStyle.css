@@ -19,15 +19,10 @@ body {
   font-family: "Rubik";
   direction: rtl;
   color: white;
-  /* scroll-snap-type: y mandatory;
-    scroll-snap-type: mandatory;
-    -webkit-scroll-snap-type: mandatory;
-    scroll-snap-destination: 0 0;
-    scroll-snap-points-y: repeat(100vh);
-    -webkit-scroll-snap-points-y: repeat(100vh); */
   background-image: url("../assets/images/general/bg.svg");
   background-size: 100% 100%;
   background-repeat: no-repeat;
+  overflow: hidden;
 }
 
 .main {
@@ -39,7 +34,7 @@ body {
 .page {
   height: 100%;
   width: 100%;
-  position: relative;
+  position: absolute;
 
   display: flex;
   flex-direction: column;
@@ -50,6 +45,13 @@ body {
 
   /* scroll-behavior: smooth; */
   overflow-x: hidden;
+}
+
+.full-screen {
+  position: absolute;
+  z-index: 1;
+  height: 100%;
+  width: 100vw;
 }
 
 .page:not(.active) {

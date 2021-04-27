@@ -107,6 +107,8 @@ body {
   font-size: 7vmin;
   margin-top: 2em;
   margin-bottom: 2vw;
+  width: 8em;
+  text-align: center;
 }
 
 .page .popup-sub-titles {
@@ -251,6 +253,7 @@ body {
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  height: 21em;
 }
 
 .page .text {

@@ -153,6 +153,7 @@
 
 .page.learning.subjects .subject-popup>div {
   font-size: 1em;
+  width: 100%;
 }
 
 .page.learning.subjects .select-everything {
@@ -166,6 +167,10 @@
 .page.learning.subjects .select-everything>img {
   height: 6vw;
   margin: 3% 0 3% 2%;
+}
+
+.page.learning.subjects .select-everything>div {
+  width: 100%;
 }
 
 .page.learning.subjects .group-line {

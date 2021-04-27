@@ -231,7 +231,8 @@ body {
   display: block;
   transform-origin: right;
   animation: line-expand 0.25s ease-in-out;
-  width: 90%;
+  width: 53vmin;
+
 }
 
 /*לפני המבחן*/

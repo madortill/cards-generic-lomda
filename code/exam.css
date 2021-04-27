@@ -70,12 +70,13 @@
   display: flex;
   width: 100%;
   overflow-y: scroll;
-  padding-bottom: 5vw;
+  padding-bottom: 2vw;
 }
 
 .page.exam .number-img {
-  height: 13vw;
+  height: 11vmin;
   margin: 1vw;
+
 }
 
 .page.exam .number-container {
@@ -92,7 +93,7 @@
   opacity: 0.3;
   position: absolute;
   font-weight: 800;
-  font-size: 7vw;
+  font-size: 5.5vmin;
 }
 
 .page.exam .active-question {

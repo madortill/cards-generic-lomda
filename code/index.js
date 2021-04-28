@@ -244,15 +244,15 @@ function beforePractice() {
                         El("div", { cls: "text" },
                             El("b", { cls: "italic" }, " החליקו"),
                             El("br", {}),
-                            "לשאלה"
+                            "למעבר"
                         ),
                     ),
                     El("div", {},
                         El("img", { attributes: { class: "icon1", src: "../assets/images/practice/beforePractice_popup/blow_icon.svg" } }),
                         El("div", { cls: "text" },
-                            El("b", {}, " 2 דקות"),
+                            El("b", {}, "תרגעו"),
                             El("br", {}),
-                            "לשאלה"
+                            "תנשמו"
                         ),
 
                     ),

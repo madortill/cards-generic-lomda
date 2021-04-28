@@ -195,7 +195,7 @@
   color: rgb(28, 63, 85);
   font-weight: 800;
   text-align: center;
-  margin-top: 4vw;
+  margin-top: 2vw;
   font-size: 6.5vw;
   height: 15vw;
   width: 78vw;
@@ -222,6 +222,7 @@
   min-height: -moz-min-content;
   /* scroll-snap-align: start; */
   scroll-behavior: smooth;
+  margin-top: -1vh;
 }
 
 /* זה בשביל התת כותרות מתחת לכותרת */
@@ -377,10 +378,11 @@
 .page.learning.content .card-group {
   display: none;
   position: relative;
-  height: 80vh;
+  /* height: 80vh;
   width: 50vh;
   max-height: 129vw;
-  max-width: 81vw;
+  max-width: 81vw; */
+  width: 81vw;
   margin-right: 50%;
   transform: translate(50%);
 }

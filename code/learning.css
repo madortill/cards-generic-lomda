@@ -378,11 +378,11 @@
 .page.learning.content .card-group {
   display: none;
   position: relative;
-  /* height: 80vh;
+  height: 80vh;
   width: 50vh;
   max-height: 129vw;
-  max-width: 81vw; */
-  width: 81vw;
+  max-width: 81vw;
+  /* width: 81vw; */
   margin-right: 50%;
   transform: translate(50%);
 }

@@ -1,13 +1,13 @@
 .page.practice .title {
-  width: 6em;
-  max-width: 7em;
+  width: 8em;
+  max-width: 9em;
   margin-top: 1em;
 }
 
 .page.practice .score {
-  width: 9em;
+  width: 10em;
   /* חישוב הרוחב של הניקוד כפול הרוחב המקסימלי של הכרטיסיות חלקי הרוחב של הכרטיסיות הדיפולטי */
-  max-width: 9em;
+  max-width: 11em;
   margin-top: 1em;
   background-image: url(../assets/images/practice/questionLog.svg);
   background-repeat: no-repeat;

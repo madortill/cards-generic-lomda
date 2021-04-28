@@ -456,7 +456,7 @@ function practicePage(event) {
             attributes: { class: "back-btn", src: "../assets/images/general/back_btn.svg" },
             listeners: {
                 click: function () {
-                    document.querySelector(".page.learning.subjects").classList.remove("active");
+                    document.querySelector(".page.practice").classList.remove("active");
                     document.querySelector(".page.learning.subjects").classList.add("active");
                     resetPrecticePage();
                 }

@@ -9,8 +9,8 @@
     top: 19vw;
     height: 9vw;
     display: none;
-    animation: show 5s ease;
-    -webkit-animation: show 5s ease;
+    animation: show 3s ease;
+    -webkit-animation: show 3s ease;
     cursor: pointer;
     z-index: 2;
 }

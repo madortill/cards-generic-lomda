@@ -282,6 +282,7 @@
   bottom: 4vw;
   z-index: 1;
   position: fixed;
+  box-shadow: 0px 0px 40px 0px #1db4dd;
 }
 
 .page.learning.content .open .arrow {

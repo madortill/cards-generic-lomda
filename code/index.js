@@ -1046,7 +1046,7 @@ function exit(page) {
                                 document.querySelector(`.page.${page} .back-btn`).style.filter = "unset";
                                 document.querySelector(`.page.${page} .questions-number`).style.filter = "unset";
                                 document.querySelector(".page .dark").remove();
-                                document.querySelector(`.page.${page}`).classList.remove("active");
+                                // document.querySelector(`.page.${page}`).classList.remove("active");
                                 document.querySelector(`.page.learning.subjects`).classList.add("active");
                                 let examStatus = "quit";
                                 resetExamPage(examStatus);
@@ -1114,7 +1114,12 @@ function examPage() {
             attributes: { class: "back-btn", src: "../assets/images/general/back_btn.svg" },
             listeners: {
                 click: function () {
-                    exit("exam");
+                    if (!document.querySelector(".page.exam .back-btn").parentElement.classList.contains("done"))
+                        exit("exam");
+                    else {
+                            let examStatus = "quit";
+                            resetExamPage(examStatus);
+                        }
                 }
             }
         });
@@ -1601,18 +1606,12 @@ function endExam(amountOfCorrectAnswers) {
         document.querySelector(".page.exam .back-btn").src = "../assets/images/exam/toHome_btn.svg";
         document.querySelector(".page.exam .back-btn").classList.add("backHome-btn");
 
-        // ifComplete();
         // גילוי תשובות נכונות וטעויות על הכרטסיות
         showAnswersExam();
         //גילוי עיגול אדום או ירוק לפי התשובה על הניווט התחתון עם המספרים
         showQuestionsValidity();
         //
         ifAnswer();
-
-        console.log("in!!4");
-
-        // document.querySelector(`.page.exam #num${currentQuestionExam + 1} > .number-text`).classList.add("active");
-
     });
 
     // מעבר לדף הבית בלחיצה על הכפתור

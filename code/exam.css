@@ -71,6 +71,7 @@
   width: 100%;
   overflow-y: scroll;
   padding-bottom: 2vw;
+  z-index: 2;
 }
 
 .page.exam .number-img {

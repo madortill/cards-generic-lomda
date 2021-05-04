@@ -3,7 +3,8 @@
  
  1.   בעמוד זה יש למלא את הפרטים לגבי כל המידע והתוכן המבוקש
  2.   [amountOfQuestions במשתנה] לשים לב שבכל נושא צריך לכתוב את כמות השאלות המקסימלית שילקח ממנו 
- 3.   amountOfQuestions => מתייחס רק לשאלות שיילקחו בשביל המבחן 
+ 3.   מתייחס רק לשאלות שיילקחו בשביל המבחן  <= amountOfQuestions
+ 4.   
 
  */
 
@@ -23,18 +24,11 @@ const TIME_FOR_EXAM = "7:00";
 /********************************************************************************************************/
 /********************************************************************************************************/
 
-// כותרת נושא הלומדה
-function addTitle() {
-    document.querySelector(".page.opening .title").innerHTML = TITLE;
-    document.querySelector(".page.learning .title").innerHTML = TITLE;
-}
-
-
 // אובייקט המכיל את כל המידע של הלומדה הכולל את התוכן, השאלות לכל נושא וכמות השאלות שיילקח מכל נושא למבחן
 const DATA = {
     // שם נושא
     "שם של נושא": {
-        "icon": "../assets/images/general/example_icon.svg",
+        "icon":  "../assets/images/learning/Artboard 4.svg",
         // שאלות לנושא הזה
         "questions": [
             {
@@ -192,7 +186,7 @@ const DATA = {
     },
     // שם נושא
     "2שם של נושא": {
-        "icon": "../assets/images/general/example_icon.svg",
+        "icon":  "../assets/images/learning/Artboard 4.svg",
         // שאלות לנושא הזה
         "questions": [
             {
@@ -290,7 +284,7 @@ const DATA = {
     },
     // שם נושא
     "3שם של נושא": {
-        "icon": "../assets/images/general/example_icon.svg",
+        "icon":  "../assets/images/learning/Artboard 4.svg",
         // שאלות לנושא הזה
         "questions": [
             {
@@ -345,7 +339,7 @@ const DATA = {
         "amountOfQuestions": 0
     },
     "4שם של נושא": {
-        "icon": "../assets/images/general/example_icon.svg",
+        "icon":  "../assets/images/learning/Artboard 4.svg",
         // שאלות לנושא הזה
         "questions": [
             {
@@ -400,7 +394,7 @@ const DATA = {
         "amountOfQuestions": 0
     },
     "5שם של נושא": {
-        "icon": "../assets/images/general/example_icon.svg",
+        "icon":  "../assets/images/learning/Artboard 4.svg",
         // שאלות לנושא הזה
         "questions": [
             {

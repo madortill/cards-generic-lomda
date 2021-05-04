@@ -5,13 +5,12 @@
 }
 
 .page.practice .score {
-  width: 10em;
-  /* חישוב הרוחב של הניקוד כפול הרוחב המקסימלי של הכרטיסיות חלקי הרוחב של הכרטיסיות הדיפולטי */
+  width: 11em;
   max-width: 11em;
   margin-top: 1em;
   background-image: url(../assets/images/practice/questionLog.svg);
   background-repeat: no-repeat;
-  height: 1.7em;
+  height: 2em;
   background-size: 100% 100%;
   display: flex;
   justify-content: space-around;
@@ -76,6 +75,7 @@
   justify-content: space-between;
   margin-top: auto;
   margin-bottom: auto;
+  max-width: 67vw;
 }
 
 .page.practice .btn {
@@ -97,6 +97,8 @@
   height: 1.7vh;
   margin-left: 2%;
   pointer-events: none;
+  padding-bottom: 3%;
+
 }
 
 .page.practice .answer-container>.ans {

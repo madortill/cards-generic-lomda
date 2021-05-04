@@ -32,6 +32,8 @@ var answeredQuestions = 0;
 // עמוד למידה
 var currentCard = 0;
 var currSubjCount = -1;
+ // התת נושא שבמרכז העמוד
+var midElement;
 
 
 /** @type {(boolean|number)[]} */
@@ -43,6 +45,12 @@ window.addEventListener("load", function () {
 
     // כותרת ראשית ללומדה
     addTitle();
+    // כותרת נושא הלומדה
+    function addTitle() {
+        document.querySelector(".page.opening .title").innerHTML = TITLE;
+        document.querySelector(".page.learning .title").innerHTML = TITLE;
+    }
+
 
     let fullScreen = El("div", {cls: "full-screen"});
     document.querySelector(".page.opening").before(fullScreen);
@@ -89,38 +97,15 @@ function homePage(event) {
     let fullScreen = El("div", {cls: "full-screen"});
     document.querySelector(".page.opening").before(fullScreen);
     // מעבר לדף הבית
-    document.querySelector(".full-screen").addEventListener("click", ()=> {
-        document.querySelector(".full-screen").remove();
-        document.querySelector(".page.opening").classList.remove("active");
-        document.querySelector(".page.home").classList.remove("active");
-        document.querySelector(".page.learning.subjects").classList.add("active");
-        learningSubjectsPage();
-    });
-
-    // document.querySelector(".main").addEventListener("click", () => {
-    //     if (this ==! document.querySelector(".page.home .about")) {}
-    //         scrollingIconSecond();
-    // });
-
-    // // מעבר בין עמוד הבית לעמוד הלמידה
-    // let scrollingIcon = El("img", {attributes: {class:"scrolling_icon", src: "../assets/images/opening/scrolling_icon.svg"},
-    // listeners: {
-    //     click: () => {
-    //         document.querySelector(".page.opening").classList.remove("active");
-    //         document.querySelector(".page.home").classList.remove("active");
-    //         document.querySelector(".page.learning.subjects").classList.add("active");
-    //         learningSubjectsPage();
-    //     }
-    // }});
-    // document.querySelector(".page.opening .container-scrolling_icon").append(scrollingIcon); 
-
-
-    // document.querySelector(".page.opening .scrolling_icon").addEventListener("click", () => {
-    //     document.querySelector(".page.opening").classList.remove("active");
-    //     document.querySelector(".page.home").classList.remove("active");
-    //     document.querySelector(".page.learning.subjects").classList.add("active");
-    //     learningSubjectsPage();
-    // });
+    setTimeout(function () {
+        document.querySelector(".full-screen").addEventListener("click", ()=> {
+            document.querySelector(".full-screen").remove();
+            document.querySelector(".page.opening").classList.remove("active");
+            document.querySelector(".page.home").classList.remove("active");
+            document.querySelector(".page.learning.subjects").classList.add("active");
+            learningSubjectsPage();
+        });
+    }, 1000);
 }
 
 
@@ -192,8 +177,8 @@ function learningSubjectsPage() {
 function createStudyCards(currentSubject) {
     let card =
         El("div", { cls: "learningCard" },
-            El("img", { attributes: { src: "../assets/images/learning/Artboard 4.svg", class: "icon" } },
-                El("img", { attributes: { src: DATA[currentSubject].icon } })
+            El("img", { attributes: { src: DATA[currentSubject].icon, class: "icon" } },
+                // El("img", { attributes: { src: DATA[currentSubject].icon } })
             ),
             El("div", { cls: "subject" }, currentSubject)
         );
@@ -242,7 +227,7 @@ function beforePractice() {
                     El("div", {},
                         El("img", { attributes: { class: "icon1", src: "../assets/images/practice/beforePractice_popup/slide_icon.svg" } }),
                         El("div", { cls: "text" },
-                            El("b", { cls: "italic" }, " החליקו"),
+                            El("b", { cls: "italic" }, " הקליקו"),
                             El("br", {}),
                             "למעבר"
                         ),
@@ -874,8 +859,6 @@ function showAnswer() {
         // green line
         let greenLine = El("img", { attributes: { src: "../assets/images/general/rightAnswer.svg" }, cls: "line" });/////////////
         document.querySelector(".question").after(greenLine);
-
-
     }
     else {
         rightAnswer = QUESTIONS[currentQuestion].correctAns;
@@ -961,7 +944,7 @@ function beforeExam() {
                     // בלוק 4
                     El("div", { cls: "instruction" },
                         El("div", { cls: "text" },
-                            "החליקו את הכרטיסיות",
+                            "הקליקו על הכפתור",
                             El("br", {}),
                             "למעבר בין שאלות"
                         ),
@@ -1882,11 +1865,7 @@ function subjectLearningPage(subject) {
     function getType(type) {
         return type.replace(/.[A-Z]/g, (str) => `${str.substr(0, 1)}-${str.substr(1).toLowerCase()}`);
     }
-
-    // התת נושא שבמרכז העמוד
-    let midElement;
-
-
+    
     // מאזין לגלילה של התתי נושאים, הופך את הנושאים שלא ממורכזים לבעלי שקיפות
     document.querySelector(".page.learning.content .container-subjects").addEventListener("scroll", function () {
         let midPage = window.innerWidth / 2;
@@ -1895,7 +1874,8 @@ function subjectLearningPage(subject) {
 
         for (let sub of this.children) {
             let pos = sub.getBoundingClientRect();
-            let positionX = (pos.x + pos.right) / 2;
+            let _positonX = pos.x ? pos.x : 70;
+            let positionX = (_positonX + pos.right) / 2;
             // בדיקה מה האלמנט שנמצא כרגע במרכז המסך
             if (Math.abs(midPage - positionX) < smallestDifference) {
                 let el = document.querySelector(".sub-topics-container.open");

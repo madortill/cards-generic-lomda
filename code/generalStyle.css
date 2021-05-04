@@ -180,10 +180,10 @@ body {
 }
 
 /* כרטיסיות למבחן ולתרגול */
-.page .card,
+/* .page .card,
 .page .buttons {
   max-width: 87vw;
-}
+} */
 
 .page .card>img {
   width: 100%;
@@ -220,10 +220,6 @@ body {
   margin-top: -0.6em;
 }
 
-.page .binary .ans-container {
-  margin-top: 2.2vw;
-}
-
 .page .binary .line,
 .page .line {
   margin-top: 0.4em;
@@ -232,7 +228,6 @@ body {
   transform-origin: right;
   animation: line-expand 0.25s ease-in-out;
   width: 53vmin;
-
 }
 
 /*לפני המבחן*/

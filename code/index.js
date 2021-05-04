@@ -503,7 +503,13 @@ function createMultipleCard(i = 2) {
                 )
             ),
             El("div", { cls: "next-btn" },
-                El("img", { attributes: { src: "../assets/images/practice/nextQuestion_btn.svg" } })
+                El("img", { attributes: { src: "../assets/images/practice/nextQuestion_btn.svg" } }),
+                El("div", {cls: "curr-question"}, 
+                    El("div", {}, 
+                    "1"), 
+                    "/",
+                    El("div", {}, QUESTIONS.length), 
+                )
             )
         );
     document.querySelector(".container-questions").append(card);

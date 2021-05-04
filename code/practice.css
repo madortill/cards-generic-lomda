@@ -134,10 +134,12 @@
   position: relative;
   bottom: 8vh;
   left: 3vw;
+  width: 82%;
 }
 
 .page.practice .next-btn>img {
   opacity: 0.4;
+  height: 100%;
 }
 
 /*      */
@@ -235,6 +237,11 @@
   margin-top: 4%;
 }
 
+.page.practice .curr-question{
+  display: flex;
+  font-weight: 800;
+  color: rgb(43, 232, 247);
+}
 @keyframes line-expand {
   0% {
     transform: scaleX(0);

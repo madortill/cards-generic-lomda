@@ -133,7 +133,7 @@
   direction: ltr;
   position: relative;
   bottom: 8vh;
-  left: 8vw;
+  left: 3vw;
 }
 
 .page.practice .next-btn>img {
@@ -207,6 +207,7 @@
   justify-content: space-between;
   color: rgb(28, 63, 85);
   margin-bottom: 1%;
+  align-items: center;
 }
 
 .page.practice .checkIcon-btn {

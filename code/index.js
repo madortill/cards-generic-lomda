@@ -316,7 +316,6 @@ function beforePractice() {
                 selectAll.classList.toggle("checked", !isNotChecked);
                 if (!isNotChecked)
                     selectAll.querySelector("img").src = "../assets/images/learning/choosePractice_popup/selectedSMALL.svg";
-                console.log(isNotChecked)
 
             }
             // במידה והמחלקה קיימת ויש ערך מסומן להתחלת התרגול - הכפתור תרגול יהיה לחיץ
@@ -715,15 +714,28 @@ function endPractice() {
     avgTimeForQusetion = sumTimeForQeustions / QUESTIONS.length;
     avgTimeForQusetion = avgTimeForQusetion.toFixed(2);
 
+    let img, isPassTitle, isPassSubTitle;
+    // האם כמות התשובות הנכונות גדולה מחצי מהשאלות
+    if (points > QUESTIONS.length / 2) {
+        isPassTitle = "כל הכבוד!";
+        isPassSubTitle = "עברת את התרגול בהצלחה";
+        img = "../assets/images/general/finish_popup/check_icon.svg"
+    }
+    else {
+        isPassTitle = "אוי... לא נורא";
+        isPassSubTitle = "בהצלחה בפעם הבאה...";
+        img = "../assets/images/general/finish_popup/x_icon.svg"
+    }
+
     let finishPopup =
         El("div", { cls: "dark" },
             // כל הקלף
             El("div", { cls: "end-practice" },
                 El("img", { attributes: { src: "../assets/images/general/close_btn.svg", class: "close-btn" } }),
                 // כותרות
-                El("div", { cls: "title-popup" }, "כל הכבוד!"),
+                El("div", { cls: "title-popup" }, isPassTitle),
                 El("div", { cls: "popup-sub-titles" },
-                    El("div", { cls: "text1-popup" }, "עברת בהצלחה את התרגול"),
+                    El("div", { cls: "text1-popup" }, isPassSubTitle),
                     El("div", { cls: "text2-popup" }, "הנה כמה נתונים שיעזרו לך"),
                 ),
                 // בלוק 1
@@ -734,7 +746,7 @@ function endPractice() {
                             El("div", {},
                                 points + " " + "תשובות נכונות"
                             ),
-                            El("img", { attributes: { src: "../assets/images/general/finish_popup/check_icon.svg", class: "checkIcon-btn" } }),
+                            El("img", { attributes: { src: img, class: "checkIcon-btn" } }),
                         ),
                         "מתוך " + QUESTIONS.length + " שאלות",
                     ),
@@ -829,7 +841,6 @@ function activateHalfHalfBTN() {
             }
         }
     }
-    console.log(num2 + " " + num1);
     document.querySelector(`.page.practice .first-question .ans${num1}`).style.opacity = "0.3";
     document.querySelector(`.page.practice .first-question .ans${num2}`).style.opacity = "0.3";
     document.querySelector(`.page.practice .first-question .ans${num1}`).style.pointerEvents = "none";
@@ -1077,7 +1088,6 @@ function questionsToExam() {
         selectedQuestions.push(...shuffledQuestions.slice(0, questionCount));
         if (selectedQuestions.length === AMOUNT_OF_TOTAL_QUESTIONS) break;
     }
-    console.log(selectedQuestions);
     return selectedQuestions;
 }
 
@@ -1799,8 +1809,6 @@ function subjectLearningPage(subject) {
     function relevantCard(cardTitle) {
         document.querySelectorAll(".page.learning.content .card-group.block").forEach(function (card) {
             if (card.querySelector(".title").textContent === cardTitle) {
-                console.log(cardTitle);
-                console.log(card);
                 card.scrollIntoView({ behavior: "smooth", block: "center" });
             }
         })
@@ -1852,7 +1860,6 @@ function subjectLearningPage(subject) {
             this.classList.add("prev");
             this.parentElement.querySelector(".card.next").classList.remove("next");
             if (json.length - 2 > index) {
-                console.log(index + 1);
                 let card = generateCard(json, this.querySelector(".title").innerHTML, index + 2);
                 card.classList.add("next");
                 this.parentElement.prepend(card);
@@ -1892,7 +1899,6 @@ function subjectLearningPage(subject) {
             sub.style.opacity = "0.6";
         }
         midElement.style.opacity = "";
-        console.log(midElPlace);
 
         let cardGroup = document.querySelectorAll(".page.learning.content .card-group");
 
@@ -2053,110 +2059,110 @@ function timeOver(page) {
     // עצירת הטיימר
     if (page === "practice") {
         clearInterval(timer);
+        showAnswer();
     }
     // החניך היה באמצע מבחן
     else {
         // איפוס הזמן
         clearInterval(timerExam);
-    }
 
-    // הוספה לרקע טשטוש
-    document.querySelector(`.page.${page} .title`).style.filter = `blur(${blurAmount})`;
-    document.querySelector(`.page.${page} .back-btn`).style.filter = `blur(${blurAmount})`;
-    if (page === "practice") {
-        document.querySelector(`.page.${page} .score`).style.filter = `blur(${blurAmount})`;
-        document.querySelector(`.page.${page} .container-questions`).style.filter = `blur(${blurAmount})`;
-        document.querySelector(`.page.${page} .buttons`).style.filter = `blur(${blurAmount})`;
-    }
-    else {
-        document.querySelector(`.page.${page} .questions-container`).style.filter = `blur(${blurAmount})`;
-        document.querySelector(`.page.${page} .questions-number`).style.filter = `blur(${blurAmount})`;
-        document.querySelector(`.page.${page} .sub-titles`).style.filter = `blur(${blurAmount})`;
-    }
+        // הוספה לרקע טשטוש
+        document.querySelector(`.page.${page} .title`).style.filter = `blur(${blurAmount})`;
+        document.querySelector(`.page.${page} .back-btn`).style.filter = `blur(${blurAmount})`;
+        if (page === "practice") {
+            document.querySelector(`.page.${page} .score`).style.filter = `blur(${blurAmount})`;
+            document.querySelector(`.page.${page} .container-questions`).style.filter = `blur(${blurAmount})`;
+            document.querySelector(`.page.${page} .buttons`).style.filter = `blur(${blurAmount})`;
+        }
+        else {
+            document.querySelector(`.page.${page} .questions-container`).style.filter = `blur(${blurAmount})`;
+            document.querySelector(`.page.${page} .questions-number`).style.filter = `blur(${blurAmount})`;
+            document.querySelector(`.page.${page} .sub-titles`).style.filter = `blur(${blurAmount})`;
+        }
+        // הוספת פופאפ
+        let popup =
+            El("div", { cls: "dark" },
+                El("div", { cls: "exit-popup", },
+                    El("div", { cls: "title-popup" }, "נגמר הזמן..."),
+                    El("div", { cls: "sub-title-popup" }, "פעם הבאה ענו קצת יותר מהר:)"),
+                    El("div", { cls: "buttons-exit-popup" },
+                        // כפתור חזרה למסך הבית
+                        El("img", {
+                            attributes: {
+                                src: "../assets/images/general/leavePracticeOrExam_popup/back.svg", class: "button-popup",
+                            }, listeners: {
+                                click: function () {
+                                    // כפתור יציאה מהתרגול או מהמבחן למסך הבית
+                                    document.querySelector(`.page.${page} .title`).style.filter = "unset";
+                                    document.querySelector(`.page.${page} .back-btn`).style.filter = "unset";
+                                    if (page === "practice") {
+                                        document.querySelector(`.page.${page} .score`).style.filter = "unset";
+                                        document.querySelector(`.page.${page} .container-questions`).style.filter = "unset";
+                                        document.querySelector(`.page.${page} .buttons`).style.filter = "unset";
+                                    }
+                                    else {
+                                        document.querySelector(`.page.${page} .questions-container`).style.filter = "unset";
+                                        document.querySelector(`.page.${page} .questions-number`).style.filter = "unset";
+                                        document.querySelector(`.page.${page} .sub-titles`).style.filter = "unset";
+                                    }
+                                    document.querySelector(".page .dark").remove();
+                                    document.querySelector(`.page.${page}`).classList.remove("active");
+                                    document.querySelector(`.page.learning.subjects`).classList.add("active");
 
-    // הוספת פופאפ
-    let popup =
-        El("div", { cls: "dark" },
-            El("div", { cls: "exit-popup", },
-                El("div", { cls: "title-popup" }, "נגמר הזמן..."),
-                El("div", { cls: "sub-title-popup" }, "פעם הבאה ענו קצת יותר מהר:)"),
-                El("div", { cls: "buttons-exit-popup" },
-                    // כפתור חזרה למסך הבית
-                    El("img", {
-                        attributes: {
-                            src: "../assets/images/general/leavePracticeOrExam_popup/back.svg", class: "button-popup",
-                        }, listeners: {
-                            click: function () {
-                                // כפתור יציאה מהתרגול או מהמבחן למסך הבית
-                                document.querySelector(`.page.${page} .title`).style.filter = "unset";
-                                document.querySelector(`.page.${page} .back-btn`).style.filter = "unset";
-                                if (page === "practice") {
-                                    document.querySelector(`.page.${page} .score`).style.filter = "unset";
-                                    document.querySelector(`.page.${page} .container-questions`).style.filter = "unset";
-                                    document.querySelector(`.page.${page} .buttons`).style.filter = "unset";
-                                }
-                                else {
-                                    document.querySelector(`.page.${page} .questions-container`).style.filter = "unset";
-                                    document.querySelector(`.page.${page} .questions-number`).style.filter = "unset";
-                                    document.querySelector(`.page.${page} .sub-titles`).style.filter = "unset";
-                                }
-                                document.querySelector(".page .dark").remove();
-                                document.querySelector(`.page.${page}`).classList.remove("active");
-                                document.querySelector(`.page.learning.subjects`).classList.add("active");
-
-                                if (page === "exam") {
-                                    let examStatus = "quit";
-                                    resetExamPage(examStatus);
-                                }
-                                else {
-                                    resetPrecticePage(false);
+                                    if (page === "exam") {
+                                        let examStatus = "quit";
+                                        resetExamPage(examStatus);
+                                    }
+                                    else {
+                                        resetPrecticePage(false);
+                                    }
                                 }
                             }
-                        }
-                    }),
-                    // כפתור חזרה לניסיון נוסף לתרגול או המבחן
-                    El("img", {
-                        attributes: {
-                            src: "../assets/images/general/tryAgainBtn.svg", class: "button-popup"
-                        }, listeners: {
-                            click: function () {
-                                // חזרה על המבחן או התרגול
-                                document.querySelector(`.page.${page} .title`).style.filter = "unset";
-                                document.querySelector(`.page.${page} .back-btn`).style.filter = "unset";
-                                if (page === "practice") {
-                                    document.querySelector(`.page.${page} .score`).style.filter = "unset";
-                                    document.querySelector(`.page.${page} .container-questions`).style.filter = "unset";
-                                    document.querySelector(`.page.${page} .buttons`).style.filter = "unset";
-                                }
-                                else {
-                                    document.querySelector(`.page.${page} .questions-container`).style.filter = "unset";
-                                    document.querySelector(`.page.${page} .questions-number`).style.filter = "unset";
-                                    document.querySelector(`.page.${page} .sub-titles`).style.filter = "unset";
-                                }
-                                document.querySelector(".page .dark").remove();
-                                // החניך היה באמצע תרגול
-                                if (page === "practice") {
-                                    practiceSeconds = AMOUNT_OF_TIME_TO_QUESTION;
-                                    resetPrecticePage(false);
-                                    practicePage();
-                                }
-                                // החניך היה באמצע מבחן
-                                else {
-                                    // איפוס השאלה הנוכחית 
-                                    currentQuestionExam = 0;
-                                    document.querySelector(".page.exam .questions-container").innerHTML = "";
-                                    document.querySelector(".page.exam .questions-number").innerHTML = "";
-                                    document.querySelector(".page.exam .back-btn").remove();
-                                    examPage();
+                        }),
+                        // כפתור חזרה לניסיון נוסף לתרגול או המבחן
+                        El("img", {
+                            attributes: {
+                                src: "../assets/images/general/tryAgainBtn.svg", class: "button-popup"
+                            }, listeners: {
+                                click: function () {
+                                    // חזרה על המבחן או התרגול
+                                    document.querySelector(`.page.${page} .title`).style.filter = "unset";
+                                    document.querySelector(`.page.${page} .back-btn`).style.filter = "unset";
+                                    if (page === "practice") {
+                                        document.querySelector(`.page.${page} .score`).style.filter = "unset";
+                                        document.querySelector(`.page.${page} .container-questions`).style.filter = "unset";
+                                        document.querySelector(`.page.${page} .buttons`).style.filter = "unset";
+                                    }
+                                    else {
+                                        document.querySelector(`.page.${page} .questions-container`).style.filter = "unset";
+                                        document.querySelector(`.page.${page} .questions-number`).style.filter = "unset";
+                                        document.querySelector(`.page.${page} .sub-titles`).style.filter = "unset";
+                                    }
+                                    document.querySelector(".page .dark").remove();
+                                    // החניך היה באמצע תרגול
+                                    if (page === "practice") {
+                                        practiceSeconds = AMOUNT_OF_TIME_TO_QUESTION;
+                                        resetPrecticePage(false);
+                                        practicePage();
+                                    }
+                                    // החניך היה באמצע מבחן
+                                    else {
+                                        // איפוס השאלה הנוכחית 
+                                        currentQuestionExam = 0;
+                                        document.querySelector(".page.exam .questions-container").innerHTML = "";
+                                        document.querySelector(".page.exam .questions-number").innerHTML = "";
+                                        document.querySelector(".page.exam .back-btn").remove();
+                                        examPage();
+                                    }
                                 }
                             }
-                        }
-                    })
+                        })
+                    )
                 )
-            )
 
-        )
-    document.querySelector(`.page.${page}`).append(popup);
+            )
+        document.querySelector(`.page.${page}`).append(popup);
+    }
 }
 
 

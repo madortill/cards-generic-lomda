@@ -133,8 +133,10 @@
   direction: ltr;
   position: relative;
   bottom: 8vh;
-  left: 3vw;
-  width: 82%;
+  right: 3vh;
+  width: 34vh;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .page.practice .next-btn>img {
@@ -239,8 +241,9 @@
 
 .page.practice .curr-question{
   display: flex;
-  font-weight: 800;
-  color: rgb(43, 232, 247);
+  font-weight: 500; 
+  color: rgb(28, 63, 85);
+  font-size: 0.9em;
 }
 @keyframes line-expand {
   0% {

@@ -504,11 +504,11 @@ function createMultipleCard(i = 2) {
             ),
             El("div", { cls: "next-btn" },
                 El("img", { attributes: { src: "../assets/images/practice/nextQuestion_btn.svg" } }),
-                El("div", {cls: "curr-question"}, 
+                El("div", {cls: "curr-question"},
                     El("div", {}, 
-                    "1"), 
+                    currentQuestion+1), 
                     "/",
-                    El("div", {}, QUESTIONS.length), 
+                    El("div", {}, QUESTIONS.length),
                 )
             )
         );
@@ -536,7 +536,13 @@ function createBinaryCard(i = 2) {
                 ),
             ),
             El("div", { cls: "next-btn" },
-                El("img", { attributes: { src: "../assets/images/practice/nextQuestion_btn.svg" } })
+                El("img", { attributes: { src: "../assets/images/practice/nextQuestion_btn.svg" } }),
+                El("div", {cls: "curr-question"},
+                    El("div", {}, 
+                    currentQuestion+1), 
+                    "/",
+                    El("div", {}, QUESTIONS.length),
+                )
             )
         );
     document.querySelector(".container-questions").append(card);
@@ -688,6 +694,7 @@ function nextQuestionPractice() {
         endPractice();
     }
     currentQuestion++;
+    console.log(currentQuestion);
 
     // בודק האם להפעיל את כפתור החצי חצי
     halfHalfBTN_mode();

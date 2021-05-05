@@ -424,3 +424,12 @@
 .page.learning.content .block {
   display: block;
 }
+
+
+.page.learning.content .sub-topics-container > .sub-sub-topic {
+  display: none;
+}
+
+.none {
+  display: none;
+}

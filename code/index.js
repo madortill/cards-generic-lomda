@@ -18,6 +18,7 @@ var avgTimeForQusetion = 0;
 var sumTimeForQeustions = 0;
 var isPressedHalfHalf = false;
 var QUESTIONS = [];
+var currCardCount;
 
 // עמוד מבחן
 const SECONDS_59 = 59;
@@ -387,6 +388,7 @@ function practicePage(event) {
 
     // איפוס מיקום השאלה הנוכחית
     currentQuestion = 0;
+    currCardCount = 1;
 
     // איפוס ניקוד
     points = 0;
@@ -421,6 +423,11 @@ function practicePage(event) {
         }
 
     }
+
+    
+    // מוסיף לכרטיסייה הראשונה את מספר הכרטיסייה הנוכחית
+    document.querySelector(".page.practice .first-question .curr-question > .curr-ques-text").innerHTML = currCardCount;
+    console.log(currCardCount);
 
     // התחלת הספירה לאחור
     timer = setInterval(startTimer, 1000);
@@ -505,8 +512,7 @@ function createMultipleCard(i = 2) {
             El("div", { cls: "next-btn" },
                 El("img", { attributes: { src: "../assets/images/practice/nextQuestion_btn.svg" } }),
                 El("div", {cls: "curr-question"},
-                    El("div", {}, 
-                    currentQuestion+1), 
+                    El("div", {cls:"curr-ques-text"}), 
                     "/",
                     El("div", {}, QUESTIONS.length),
                 )
@@ -538,8 +544,7 @@ function createBinaryCard(i = 2) {
             El("div", { cls: "next-btn" },
                 El("img", { attributes: { src: "../assets/images/practice/nextQuestion_btn.svg" } }),
                 El("div", {cls: "curr-question"},
-                    El("div", {}, 
-                    currentQuestion+1), 
+                    El("div", {cls:"curr-ques-text"}), 
                     "/",
                     El("div", {}, QUESTIONS.length),
                 )
@@ -627,6 +632,9 @@ function checkAnswerBinary(selectedAnswer, event) {
 
 // הפונקציה מעבירה לשאלה הבאה
 function nextQuestionPractice() {
+    // 
+    currCardCount++;
+
     // סוכם את כל השניות לכל שאלה
     sumTimeForQeustions = sumTimeForQeustions + (AMOUNT_OF_TIME_TO_QUESTION - practiceSeconds);
 
@@ -639,6 +647,9 @@ function nextQuestionPractice() {
         else {
             createMultipleCard();
         }
+
+        // מוסיף לכרטיסייה האחורית את מספר הכרטיסייה הנוכחית
+        document.querySelector(".page.practice .second-question .curr-question > .curr-ques-text").innerHTML = currCardCount;
 
         document.querySelector(".page.practice .first-question").classList.add("transition");
         let firstCard = document.querySelector(".page.practice .transition");
@@ -694,8 +705,7 @@ function nextQuestionPractice() {
         endPractice();
     }
     currentQuestion++;
-    console.log(currentQuestion);
-
+    
     // בודק האם להפעיל את כפתור החצי חצי
     halfHalfBTN_mode();
     document.querySelector(".page.practice .first-question .next-btn > img").removeEventListener("click", nextQuestionPractice);
@@ -1787,7 +1797,7 @@ function subjectLearningPage(subject) {
                 // יוצר מערך של אלמנטים ומעביר כל אלמנט בנפרד מחוץ למערך (...=)
                 ...subSubTopics.map(
                     subSubTopic => El("div", {
-                        attributes: { cls: "sub-sub-topic" },
+                        attributes: { class: "sub-sub-topic" },
                         listeners: { click: () => { relevantCard(subSubTopic) } }
                     }, subSubTopic
                     )
@@ -1945,7 +1955,7 @@ function subjectLearningPage(subject) {
                     el.classList.remove("open");
                     animateDims(el, true, "height");
                 }
-
+document.querySelector("").classList.remove("none");
                 // האם האלמנט הנוכחי שנלחץ הוא לא במרכז
                 if (midElement !== this) {
                     // מעבר אל האלמנט הנלחץ שיהיה במרכז המסך

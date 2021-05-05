@@ -1964,7 +1964,7 @@ function subjectLearningPage(subject) {
                     // האלמנט שנלחץ הוא כבר במרכז המסך
                 } else {
                     let opened = this.classList.toggle("open"); 
-                    this.querySelector(".sub-sub-topic").classList.toggle("block");
+                    // this.querySelector(".sub-sub-topic").classList.toggle("block"); //1111
                     animateDims(this, !opened, "height");
                 }
             })

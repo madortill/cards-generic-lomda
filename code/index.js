@@ -1955,7 +1955,7 @@ function subjectLearningPage(subject) {
                     el.classList.remove("open");
                     animateDims(el, true, "height");
                 }
-document.querySelector("").classList.remove("none");
+
                 // האם האלמנט הנוכחי שנלחץ הוא לא במרכז
                 if (midElement !== this) {
                     // מעבר אל האלמנט הנלחץ שיהיה במרכז המסך
@@ -1963,7 +1963,8 @@ document.querySelector("").classList.remove("none");
                     parent.scrollLeft = (parent.scrollWidth - parent.offsetWidth) + this.offsetLeft - (parent.offsetWidth - this.offsetWidth) / 2;
                     // האלמנט שנלחץ הוא כבר במרכז המסך
                 } else {
-                    let opened = this.classList.toggle("open");
+                    let opened = this.classList.toggle("open"); 
+                    this.querySelector(".sub-sub-topic").classList.toggle("block");
                     animateDims(this, !opened, "height");
                 }
             })

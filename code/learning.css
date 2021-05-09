@@ -364,12 +364,13 @@
 }
 
 .page.learning.content .cards-container {
-  padding-bottom: 50vh;
+  padding-bottom: 10vh;
   overflow: auto;
   width: 100%;
   scroll-snap-type: y mandatory;
   scroll-snap-align: center;
   scroll-padding-bottom: 5em;
+  flex:1;
 }
 
 .page.learning.content .content {

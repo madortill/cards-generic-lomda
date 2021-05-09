@@ -364,7 +364,7 @@
 }
 
 .page.learning.content .cards-container {
-  padding-bottom: 10vh;
+  padding-bottom: 20vh;
   overflow: auto;
   width: 100%;
   scroll-snap-type: y mandatory;

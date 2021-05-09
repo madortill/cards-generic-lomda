@@ -267,13 +267,13 @@
 .page.learning.content .container-subjects::before {
   display: block;
   content: "";
-  padding-left: 50vw;
+  padding-left: 32vw;
 }
 
 .page.learning.content .container-subjects::after {
   display: block;
   content: "";
-  padding-right: 50vw;
+  padding-right: 32vw;
 }
 
 .page.learning.content .practice-btn {
@@ -369,8 +369,8 @@
   width: 100%;
   scroll-snap-type: y mandatory;
   scroll-snap-align: center;
-  scroll-padding-bottom: 5em;
-  flex:1;
+  scroll-padding-bottom: 0;
+  flex: 1;
 }
 
 .page.learning.content .content {
@@ -381,10 +381,9 @@
   display: none;
   position: relative;
   height: 80vh;
-  width: 50vh;
-  max-height: 129vw;
-  max-width: 81vw;
-  /* width: 81vw; */
+  width: 54vh;
+  max-height: 109vw;
+  max-width: 83vw;
   margin-right: 50%;
   transform: translate(50%);
 }

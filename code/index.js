@@ -57,26 +57,13 @@ window.addEventListener("load", function () {
     document.querySelector(".page.opening").before(fullScreen);
     fullScreen.addEventListener("click", homePage);
 
-    // document.querySelector(".main").parentNode.insertBefore(fullScreen, main);
-
     // מעבר בין עמוד הבית לעמוד הלמידה
     let scrollingIcon = El("img", {attributes: {class:"scrolling_icon", src: "../assets/images/opening/scrolling_icon.svg"}});
     document.querySelector(".page.opening .container-scrolling_icon").append(scrollingIcon); 
     // הפעלה של האנימציה בלחיצה
     document.querySelector(".page.opening  .expand").style.transition = "all 1s ease";
-    // document.querySelector(".page.opening .scrolling_icon").addEventListener("click", homePage);
 
-    // מעבר לדף הבית
-    // document.querySelector(".main").addEventListener("scroll", homePage, false);
 });
-
-// מעבר למסך הנושאים ללמידה. זה הפעם השנייה שלוחצים
-// function scrollingIconSecond() {
-//     document.querySelector(".page.opening").classList.remove("active");
-//     document.querySelector(".page.home").classList.remove("active");
-//     document.querySelector(".page.learning.subjects").classList.add("active");
-//     learningSubjectsPage();
-// }
 
 // מעבר לדף הבית
 /**
@@ -1903,7 +1890,7 @@ function subjectLearningPage(subject) {
         let count = 0;
 
         for (let sub of this.children) {
-            let pos = sub.getBoundingClientRect();
+            // let pos = sub.getBoundingClientRect();
             let _positonX = pos.x ? pos.x : 70;
             let positionX = (_positonX + pos.right) / 2;
             // בדיקה מה האלמנט שנמצא כרגע במרכז המסך
@@ -1964,7 +1951,6 @@ function subjectLearningPage(subject) {
                     // האלמנט שנלחץ הוא כבר במרכז המסך
                 } else {
                     let opened = this.classList.toggle("open"); 
-                    // this.querySelector(".sub-sub-topic").classList.toggle("block"); //1111
                     animateDims(this, !opened, "height");
                 }
             })

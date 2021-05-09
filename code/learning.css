@@ -411,10 +411,14 @@
   visibility: hidden;
   pointer-events: none;
 }
+/* transform: translateX(-140%); */
 
 .page.learning.content .next-back-btn.last .next {
   visibility: hidden;
   pointer-events: none;
+}
+.page.learning.content .next-back-btn.last .back {
+  transform: translateX(-140%);
 }
 
 .page.learning.content .card.prev {

@@ -138,6 +138,9 @@
   visibility: hidden;
   pointer-events: none;
 }
+.page.exam .next-back-btn.last>img.back {
+  transform: translateX(-140%);
+}
 
 .page.exam .next-back-btn.last .next {
   visibility: hidden;

@@ -1890,7 +1890,7 @@ function subjectLearningPage(subject) {
         let count = 0;
 
         for (let sub of this.children) {
-            // let pos = sub.getBoundingClientRect();
+            let pos = sub.getBoundingClientRect();
             let _positonX = pos.x ? pos.x : 70;
             let positionX = (_positonX + pos.right) / 2;
             // בדיקה מה האלמנט שנמצא כרגע במרכז המסך

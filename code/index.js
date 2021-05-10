@@ -1882,7 +1882,7 @@ function subjectLearningPage(subject) {
     function getType(type) {
         return type.replace(/.[A-Z]/g, (str) => `${str.substr(0, 1)}-${str.substr(1).toLowerCase()}`);
     }
-    
+
     // מאזין לגלילה של התתי נושאים, הופך את הנושאים שלא ממורכזים לבעלי שקיפות
     document.querySelector(".page.learning.content .container-subjects").addEventListener("scroll", function () {
         let midPage = window.innerWidth / 2;
@@ -1929,6 +1929,7 @@ function subjectLearningPage(subject) {
         }
     }, { passive: true });
 
+    
     // הוספת מאזין לחיצה בעבור כל תת נושא, ובלחיצה על נושא שאינו במרכז, הפונקציה תעבור אליו בצורה חלקה ויפהה
     document.querySelectorAll(".page.learning.content .sub-topics-container").forEach(el => {
         el.addEventListener("click",
@@ -1955,6 +1956,9 @@ function subjectLearningPage(subject) {
                 }
             })
     });
+        // document.querySelector(".page.learning.content .container-subjects").firstChild.style.paddingLeft = "32vw";
+        // document.querySelector(".page.learning.content .container-subjects::before").style.paddingLeft = "32vw";
+
 }
 
 // ניקוי עמוד הלמידה לאחר יציאה ממנו

@@ -1767,6 +1767,11 @@ function subjectLearningPage(subject) {
     // הוספת תתי נושאים לכותרת
     let subjects = El("div", { cls: "container-subjects" });
     document.querySelector(".page.learning.content .title").after(subjects);
+    
+    // הופסת דיב ראשוני לבר הניווט כדי שהתת נושא הראשון יהיה במרכז
+    let beforeSpace = El("div", {cls: "space"});
+    document.querySelector(".page.learning.content .container-subjects").append(beforeSpace);
+
 
     let id = 0;
     // לכל תת נושא 
@@ -1956,9 +1961,6 @@ function subjectLearningPage(subject) {
                 }
             })
     });
-        // document.querySelector(".page.learning.content .container-subjects").firstChild.style.paddingLeft = "32vw";
-        // document.querySelector(".page.learning.content .container-subjects::before").style.paddingLeft = "32vw";
-
 }
 
 // ניקוי עמוד הלמידה לאחר יציאה ממנו

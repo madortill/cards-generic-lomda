@@ -263,12 +263,18 @@
 .page.learning.content .sub-topics-container.open {
   max-height: 100vh;
 }
-
+/* 
 .page.learning.content .container-subjects::before {
   display: block;
   content: "";
   padding-left: 50vw;
-}
+} */
+
+.page.learning.content .container-subjects .space {
+  display: block;
+  padding-left: 32vw;
+} 
+
 
 .page.learning.content .container-subjects::after {
   display: block;

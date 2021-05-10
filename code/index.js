@@ -1769,8 +1769,8 @@ function subjectLearningPage(subject) {
     document.querySelector(".page.learning.content .title").after(subjects);
     
     // הופסת דיב ראשוני לבר הניווט כדי שהתת נושא הראשון יהיה במרכז
-    let beforeSpace = El("div", {cls: "space"});
-    document.querySelector(".page.learning.content .container-subjects").append(beforeSpace);
+    // let beforeSpace = El("div", {cls: "space"});
+    // document.querySelector(".page.learning.content .container-subjects").append(beforeSpace);
 
 
     let id = 0;

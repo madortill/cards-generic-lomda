@@ -1960,7 +1960,7 @@ function subjectLearningPage(subject) {
                     parent.scrollLeft = (midElement.offsetLeft + midElement.offsetWidth / 2 - parent.offsetWidth)/2 ;
                     console.log("parent "+parent.scrollLeft);
                     console.log("mid "+midElement.offsetLeft);
-                    console.log(("parent cal "+ midElement.offsetLeft + midElement.offsetWidth / 2 - parent.offsetWidth)/2) ;
+                    console.log("parent cal "+ (midElement.offsetLeft + midElement.offsetWidth / 2 - parent.offsetWidth)/2) ;
                     // האלמנט שנלחץ הוא כבר במרכז המסך
                 } else {
                     let opened = this.classList.toggle("open"); 

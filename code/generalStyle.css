@@ -189,12 +189,22 @@ body {
   width: 100%;
 }
 
-.page .question-text {
+.page.exam .question-text {
   position: absolute;
   height: 66%;
   width: 82%;
   right: 8%;
-  top: 15%;
+  top: 17%;
+  color: rgb(28, 63, 85);
+  font-size: 4.5vmin;
+}
+
+.page.practice .question-text {
+  position: absolute;
+  height: 66%;
+  width: 82%;
+  right: 8%;
+  top: 20%;
   color: rgb(28, 63, 85);
   font-size: 4.5vmin;
 }

@@ -4,7 +4,7 @@
  1.   בעמוד זה יש למלא את הפרטים לגבי כל המידע והתוכן המבוקש
  2.   [amountOfQuestions במשתנה] לשים לב שבכל נושא צריך לכתוב את כמות השאלות המקסימלית שילקח ממנו 
  3.   מתייחס רק לשאלות שיילקחו בשביל המבחן  <= amountOfQuestions
- 4.   
+ 4.    
 
  */
 
@@ -46,6 +46,7 @@ const DATA = {
                 trueOrFalse: true
             }
         ],
+        "amountOfQuestions": 2,
         "learningContent": {
             "תת נושא 1": {
                 "תת תת נושא 11": [ 
@@ -181,8 +182,6 @@ const DATA = {
                 // ]
             }
         },
-        "amountOfQuestions": 2
-
     },
     // שם נושא
     "2שם של נושא": {
@@ -274,13 +273,14 @@ const DATA = {
                 trueOrFalse: false
             }
         ],
+        "amountOfQuestions": 10,
         "learningContent": {
             // סוג הכרטיסייה
             "textAndPic": {
 
             }
         },
-        "amountOfQuestions": 1
+        
     },
     // שם נושא
     "3שם של נושא": {

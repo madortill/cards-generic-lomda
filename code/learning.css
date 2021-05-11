@@ -220,7 +220,6 @@
   min-height: min-content;
   min-height: -webkit-min-content;
   min-height: -moz-min-content;
-  /* scroll-snap-align: start; */
   scroll-behavior: smooth;
   margin-top: -1vh;
 }

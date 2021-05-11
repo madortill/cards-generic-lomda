@@ -665,6 +665,9 @@ function nextQuestionPractice() {
     }
     // 2 הכרטיסיות האחרונות
     else if (currentQuestion + 2 === QUESTIONS.length) {
+        // מוסיף לכרטיסייה האחורית את מספר הכרטיסייה הנוכחית
+        document.querySelector(".page.practice .second-question .curr-question > .curr-ques-text").innerHTML = currCardCount;
+
         document.querySelector(".page.practice .first-question").style.transform = "translateX(108vw)";
         document.querySelector(".page.practice .first-question").style.transition = "all 0.7s ease";
         document.querySelector(".page.practice .first-question").style.position = "absolute";
@@ -1953,7 +1956,10 @@ function subjectLearningPage(subject) {
                 if (midElement !== this) {
                     // מעבר אל האלמנט הנלחץ שיהיה במרכז המסך
                     let parent = this.parentElement;
-                    parent.scrollLeft = (parent.scrollWidth - parent.offsetWidth) + this.offsetLeft - (parent.offsetWidth - this.offsetWidth) / 2;
+                    // parent.scrollLeft = (parent.scrollWidth - parent.offsetWidth) + this.offsetLeft - (parent.offsetWidth - this.offsetWidth) / 2;
+                    parent.scrollLeft = midElement.offsetLeft + midElement.offsetWidth / 2 - parent.offsetWidth;
+                    console.log(parent.scrollLeft);
+                    console.log(midElement.offsetLeft + midElement.offsetWidth / 2 - parent.offsetWidth);
                     // האלמנט שנלחץ הוא כבר במרכז המסך
                 } else {
                     let opened = this.classList.toggle("open"); 

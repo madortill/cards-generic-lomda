@@ -1957,9 +1957,10 @@ function subjectLearningPage(subject) {
                     // מעבר אל האלמנט הנלחץ שיהיה במרכז המסך
                     let parent = this.parentElement;
                     // parent.scrollLeft = (parent.scrollWidth - parent.offsetWidth) + this.offsetLeft - (parent.offsetWidth - this.offsetWidth) / 2;
-                    parent.scrollLeft = (midElement.offsetLeft + midElement.offsetWidth / 2 - parent.offsetWidth) ;
-                    console.log(parent.scrollLeft);
-                    console.log(midElement.offsetLeft + midElement.offsetWidth / 2 - parent.offsetWidth) ;
+                    parent.scrollLeft = (midElement.offsetLeft + midElement.offsetWidth / 2 - parent.offsetWidth)/2 ;
+                    console.log("parent "+parent.scrollLeft);
+                    console.log("mid "+midElement.offsetLeft);
+                    console.log(("parent cal "+ midElement.offsetLeft + midElement.offsetWidth / 2 - parent.offsetWidth)/2) ;
                     // האלמנט שנלחץ הוא כבר במרכז המסך
                 } else {
                     let opened = this.classList.toggle("open"); 

@@ -44,7 +44,7 @@ body {
   -webkit-scroll-snap-coordinate: 0 0;
 
   /* scroll-behavior: smooth; */
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 .full-screen {
@@ -194,7 +194,7 @@ body {
   height: 66%;
   width: 82%;
   right: 8%;
-  top: 23%;
+  top: 15%;
   color: rgb(28, 63, 85);
   font-size: 4.5vmin;
 }

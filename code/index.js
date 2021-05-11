@@ -1957,7 +1957,7 @@ function subjectLearningPage(subject) {
                     // מעבר אל האלמנט הנלחץ שיהיה במרכז המסך
                     let parent = this.parentElement;
                     // parent.scrollLeft = (parent.scrollWidth - parent.offsetWidth) + this.offsetLeft - (parent.offsetWidth - this.offsetWidth) / 2;
-                    parent.scrollLeft = midElement.offsetLeft + midElement.offsetWidth / 2 - parent.offsetWidth;
+                    parent.scrollLeft = (midElement.offsetLeft + midElement.offsetWidth / 2 - parent.offsetWidth)/1.5;
                     console.log(parent.scrollLeft);
                     console.log(midElement.offsetLeft + midElement.offsetWidth / 2 - parent.offsetWidth);
                     // האלמנט שנלחץ הוא כבר במרכז המסך

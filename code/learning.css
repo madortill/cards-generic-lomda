@@ -228,6 +228,7 @@
 .page.learning.content .container-subjects::-webkit-scrollbar {
   display: none;
 }
+
 /* זה בשביל התת כותרות מתחת לכותרת */
 .page.learning.content .sub-title {
   font-size: 1.2em;

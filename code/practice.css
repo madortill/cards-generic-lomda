@@ -129,12 +129,12 @@
 .page.practice .next-btn {
   display: flex;
   justify-self: flex-end;
-  height: 4vh;
+  height: 4vmax;
   direction: ltr;
   position: relative;
-  bottom: 8vh;
-  right: 3vh;
-  width: 34vh;
+  bottom: 8vmax;
+  right: 3vmax;
+  width: 34vmax;
   align-items: center;
   justify-content: space-between;
 }

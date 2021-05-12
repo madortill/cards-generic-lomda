@@ -205,12 +205,12 @@ body {
 
 .page.practice .question-text {
   position: absolute;
-  height: 66%;
-  width: 82%;
-  right: 8%;
-  top: 20%;
+  height: 37vmax;
+  width: 37vmax;
+  right: 4vmax;
+  top: 12vmax;
   color: rgb(28, 63, 85);
-  font-size: 4.5vmin;
+  font-size: 2.5vmax
 }
 
 .page .question {

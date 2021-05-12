@@ -1957,6 +1957,8 @@ function subjectLearningPage(subject) {
                 if (midElement !== this) {
                     // מעבר אל האלמנט הנלחץ שיהיה במרכז המסך
                     let parent = this.parentElement;
+                    
+                    // זה עובד טוב כשרואים על המחשב
                     // let scroll = (parent.scrollWidth - parent.offsetWidth) + this.offsetLeft - (parent.offsetWidth - this.offsetWidth) / 2;
                     // parent.scrollLeft = scroll;
 

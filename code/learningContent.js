@@ -267,7 +267,7 @@ const DATA = {
                 trueOrFalse: false
             }
         ],
-        "amountOfQuestions": 11,
+        "amountOfQuestions": 2,
         "learningContent": {
             // סוג הכרטיסייה
             "textAndPic": {

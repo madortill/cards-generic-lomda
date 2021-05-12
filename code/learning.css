@@ -208,8 +208,9 @@
 
 .page.learning.content .container-subjects {
   display: flex;
-  width: 100%;
-  overflow: auto;
+  width: 100vw;
+  white-space: nowrap;
+  overflow: scroll;
   box-sizing: border-box;
   scroll-snap-type: x mandatory;
   scroll-snap-type: mandatory;
@@ -224,6 +225,9 @@
   margin-top: -1vh;
 }
 
+.page.learning.content .container-subjects::-webkit-scrollbar {
+  display: none;
+}
 /* זה בשביל התת כותרות מתחת לכותרת */
 .page.learning.content .sub-title {
   font-size: 1.2em;

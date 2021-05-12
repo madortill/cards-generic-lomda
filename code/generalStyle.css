@@ -112,7 +112,7 @@ body {
   width: 8em;
   text-align: center;
 }
-.page.exam .title-popup {
+.page.exam .exit-popup .title-popup {
    margin-top: 3em;
 }
 
@@ -155,6 +155,7 @@ body {
   justify-content: space-between;
   color: rgb(28, 63, 85);
   margin-bottom: 1%;
+  align-items: center;
 }
 
 .page .checkIcon-btn {

@@ -174,6 +174,7 @@
   display: flex;
   align-items: center;
   flex-direction: column;
+  text-align: center;
 }
 
 .page.practice .text1-popup {

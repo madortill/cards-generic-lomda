@@ -772,7 +772,7 @@ function endPractice() {
                     El("div", { cls: "summery-titles" },
                         El("div", { cls: "titleAndIcon-container" },
                             El("div", {},
-                                avgTimeForQusetion + " דקות"
+                                avgTimeForQusetion + " שניות"
                             ),
                             El("img", { attributes: { src: "../assets/images/general/finish_popup/timer_icon.svg", class: "timeIcon-btn" } }),
                         ),

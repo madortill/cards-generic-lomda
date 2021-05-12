@@ -1614,6 +1614,8 @@ function endExam(amountOfCorrectAnswers) {
         // גילוי תשובות נכונות וטעויות על הכרטסיות
         showAnswersExam();
         //גילוי עיגול אדום או ירוק לפי התשובה על הניווט התחתון עם המספרים
+        document.querySelector(".page.exam .questions-number").scrollLeft = document.querySelector(".page.exam .questions-number").offsetWidth;
+        console.log(document.querySelector(".page.exam .questions-number").offsetWidth);
         showQuestionsValidity();
         //
         ifAnswer();

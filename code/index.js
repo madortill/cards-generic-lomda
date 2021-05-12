@@ -2032,7 +2032,8 @@ function practicePopup(subject) {
                     // בלוק 3
                     El("div", { cls: "instruction-practice" },
                         El("div", { cls: "text" },
-                            "החליקו בין השאלות",
+                        El("b", {}, " הקליקו") ,
+                            " למעבר בין השאלות",
                         ),
                         El("img", { attributes: { src: "../assets/images/practice/beforePractice_popup/slide_icon.svg", class: "icon4" } }),
                     ),

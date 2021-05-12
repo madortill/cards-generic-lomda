@@ -1958,24 +1958,13 @@ function subjectLearningPage(subject) {
                     let parent = this.parentElement;
                     // let scroll = (parent.scrollWidth - parent.offsetWidth) + this.offsetLeft - (parent.offsetWidth - this.offsetWidth) / 2;
                     // parent.scrollLeft = scroll;
+
+                    // האם מיקום האלמנט הנלחץ גדול ממיקום האלמנט המרכזי 
                     if(this.offsetLeft > midElement.offsetLeft)
                         parent.scrollLeft += this.offsetWidth;
                     else
                         parent.scrollLeft -= this.offsetWidth;
-                        
-                    console.log("this.offsetLeft " +this.offsetLeft);
-                    console.log("midElement.offsetLeft " + midElement.offsetLeft);
 
-                    // console.log(scroll);
-                    // console.log(parent.scrollLeft);
-
-                    //ניסיון שלי 
-                    // parent.scroll = (midElement.offsetLeft + midElement.offsetWidth / 2 - parent.offsetWidth) ;
-
-                    // console.log("parent "+parent.scrollLeft);
-                    // console.log("mid "+midElement.offsetLeft);
-                    // console.log("parent cal "+ (midElement.offsetLeft + midElement.offsetWidth / 2 - parent.offsetWidth)/2) ;
-                    
                     // האלמנט שנלחץ הוא כבר במרכז המסך
                 } else {
                     let opened = this.classList.toggle("open"); 

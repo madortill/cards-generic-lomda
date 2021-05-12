@@ -223,6 +223,9 @@
   min-height: -moz-min-content;
   scroll-behavior: smooth;
   margin-top: -1vh;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
 }
 
 .page.learning.content .container-subjects::-webkit-scrollbar {

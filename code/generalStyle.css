@@ -112,6 +112,9 @@ body {
   width: 8em;
   text-align: center;
 }
+.page.exam .title-popup {
+   margin-top: 3em;
+}
 
 .page .popup-sub-titles {
   display: flex;

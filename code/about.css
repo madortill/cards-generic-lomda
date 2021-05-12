@@ -9,7 +9,7 @@
 
 .page.about .card-container {
   position: relative;
-  width: 41vmax;
+  width: 43vmax;
   margin: 1vh 0;
 }
 
@@ -20,6 +20,7 @@
 
 .page.about .card {
   width: 100%;
+  height: 65vmax;
 }
 
 .page.about .logo {
@@ -35,7 +36,7 @@
   display: flex;
   flex-direction: column;
   margin-right: 5vw;
-  height: 61vmax;
+  height: 57vmax;
   justify-content: space-around;
   width: 88%;
 }

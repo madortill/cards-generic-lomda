@@ -414,7 +414,6 @@ function practicePage(event) {
     
     // מוסיף לכרטיסייה הראשונה את מספר הכרטיסייה הנוכחית
     document.querySelector(".page.practice .first-question .curr-question > .curr-ques-text").innerHTML = currCardCount;
-    console.log(currCardCount);
 
     // התחלת הספירה לאחור
     timer = setInterval(startTimer, 1000);

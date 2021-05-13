@@ -71,6 +71,7 @@ window.addEventListener("load", function () {
  * @param {Event} event 
  */
 function homePage(event) {
+    document.querySelector(".page.home").classList.add("active");
     document.querySelector(".full-screen").remove();
     document.querySelector(".main").removeEventListener("scroll", homePage, false);
     

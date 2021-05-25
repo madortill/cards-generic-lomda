@@ -145,7 +145,14 @@ const DATA = {
                 ],
                 "תת תת נושא 23": [
                     {
-                        cardType: "list3",
+                        cardType: "listDots3",
+                        subTitle: "כותרת לרשימה:",
+                        li1:"משפט ראשון ברשימה, זה לדוגמה משט יחסית ארוך משאר המשפטים ויש נקודה בסוף המשפט.",
+                        li2:"משפט שני ברשימה",
+                        li3:"משפט שלישי ברשימה",
+                    },
+                    {
+                        cardType: "listNumbers3",
                         subTitle: "כותרת לרשימה:",
                         li1:"משפט ראשון ברשימה, זה לדוגמה משט יחסית ארוך משאר המשפטים ויש נקודה בסוף המשפט.",
                         li2:"משפט שני ברשימה",
@@ -523,7 +530,15 @@ CARD_TYPES._3titles_3text = {
         card.querySelector(".content3").innerHTML = json.content3;
     }
 }
-CARD_TYPES.list3 = {
+CARD_TYPES.listDots3 = {
+    init(card, json) {
+        card.querySelector(".sub-title").innerHTML = json.subTitle;
+        card.querySelector(".li1").innerHTML = json.li1;
+        card.querySelector(".li2").innerHTML = json.li2;
+        card.querySelector(".li3").innerHTML = json.li3;
+    }
+}
+CARD_TYPES.listNumbers3 = {
     init(card, json) {
         card.querySelector(".sub-title").innerHTML = json.subTitle;
         card.querySelector(".li1").innerHTML = json.li1;

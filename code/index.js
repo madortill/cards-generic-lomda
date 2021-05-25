@@ -909,6 +909,7 @@ function beforeExam() {
     document.querySelector(".page.learning.subjects .back-btn").style.filter = `blur(${blurAmount})`;
     document.querySelector(".page.learning.subjects .buttons").style.filter = `blur(${blurAmount})`;
 
+    examTime();
 
     let popup =
         El("div", { cls: "dark" },
@@ -949,7 +950,7 @@ function beforeExam() {
                             "שימו לב שזמן המבחן",
                             El("br", {}),
                             "מוגבל לכ-",
-                            El("b", {}, "10 דקות")
+                            El("b", {}, `${EXAM_MINUTS} דקות`)
                         ),
                         El("img", { attributes: { src: "../assets/images/exam/beforeExam_popup/timer_icon.svg", class: "icon2" } }),
                     ),
@@ -1165,33 +1166,7 @@ function donePopup() {
     document.querySelector(`.page.exam`).append(popup);
 }
 
-// עמוד המבחן
-function examPage() {
-    // מערך השאלות למבחן
-    QUESTIONS = questionsToExam();
-
-    shuffle(QUESTIONS);
-
-    // איפוס צובר כמות השאלות שנענו
-    answeredQuestions = 0;
-
-    // הוספת כפתור חזרה למסך הבית
-    let backBtn =
-        El("img", {
-            attributes: { class: "back-btn", src: "../assets/images/general/back_btn.svg" },
-            listeners: {
-                click: function () {
-                    if (!document.querySelector(".page.exam .back-btn").parentElement.classList.contains("done"))
-                        exit("exam");
-                    else {
-                            let examStatus = "quit";
-                            resetExamPage(examStatus);
-                        }
-                }
-            }
-        });
-    document.querySelector(".page.exam").append(backBtn);
-
+function examTime(){
     // איפוס זמן המבחן לפי בחירת מומחה התוכן
     EXAM_SECONDS = TIME_FOR_EXAM.slice(-2);
     if (EXAM_SECONDS ===  "00")  {
@@ -1221,6 +1196,34 @@ function examPage() {
         examMinutes = EXAM_MINUTS;
         examSeconds = EXAM_SECONDS;
     }
+}
+
+// עמוד המבחן
+function examPage() {
+    // מערך השאלות למבחן
+    QUESTIONS = questionsToExam();
+
+    shuffle(QUESTIONS);
+
+    // איפוס צובר כמות השאלות שנענו
+    answeredQuestions = 0;
+
+    // הוספת כפתור חזרה למסך הבית
+    let backBtn =
+        El("img", {
+            attributes: { class: "back-btn", src: "../assets/images/general/back_btn.svg" },
+            listeners: {
+                click: function () {
+                    if (!document.querySelector(".page.exam .back-btn").parentElement.classList.contains("done"))
+                        exit("exam");
+                    else {
+                            let examStatus = "quit";
+                            resetExamPage(examStatus);
+                        }
+                }
+            }
+        });
+    document.querySelector(".page.exam").append(backBtn);
 
     document.querySelector(".page.exam .timer-text").innerHTML = TIME_FOR_EXAM;
     document.querySelector(".page.exam .questionNumber-text").innerHTML = "0" + "/" + QUESTIONS.length;

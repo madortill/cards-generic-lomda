@@ -126,10 +126,12 @@ body {
 .page .text1-popup {
   font-weight: 800;
   font-size: 1em;
+  width: 100%;
 }
 
 .page .text2-popup {
   font-size: 1em;
+  width: 100%;
 }
 
 .page .grey-line {

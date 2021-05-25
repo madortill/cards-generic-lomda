@@ -402,6 +402,10 @@
   margin-bottom: 1em;
 }
 
+.page.learning.content .list {
+  padding-right: 1em;
+}
+
 .page.learning.content .card.next {
   transform: rotateZ(4deg);
   opacity: 0.5;

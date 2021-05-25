@@ -273,6 +273,11 @@ body {
 
 .page .text {
   font-size: 4vmin;
+  text-align: center;
+}
+
+.page .exam-popup .text {
+  text-align: right;
 }
 
 .page .icon1 {

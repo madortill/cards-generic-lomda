@@ -208,7 +208,7 @@ function beforePractice() {
                     El("div", {},
                         El("img", { attributes: { class: "icon2", src: "../assets/images/practice/beforePractice_popup/timer_icon.svg" } }),
                         El("div", { cls: "text" },
-                            El("b", {}, " 2 דקות"),
+                            El("b", {}, " דקה"),
                             El("br", {}),
                             "לשאלה"
                         ),
@@ -2089,8 +2089,6 @@ function practicePopup(subject) {
     document.querySelector(".page.learning.content .practice-btn").style.filter = `blur(${blurAmount})`;
     document.querySelector(".page.learning.content .back-btn").style.filter = `blur(${blurAmount})`;
     document.querySelector(".page.learning.content .cards-container").style.filter = `blur(${blurAmount})`;
-}
-
     let popup =
         El("div", { cls: "dark" },
             // כל הקלף

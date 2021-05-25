@@ -109,9 +109,10 @@ body {
   font-size: 7vmin;
   margin-top: 2em;
   margin-bottom: 2vw;
-  width: 8em;
+  width: 10em;
   text-align: center;
 }
+
 .page.exam .exit-popup .title-popup {
    margin-top: 2.5em;
 }

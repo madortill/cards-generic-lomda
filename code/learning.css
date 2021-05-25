@@ -378,7 +378,7 @@
 }
 
 .page.learning.content .cards-container {
-  padding-bottom: 20vh;
+  padding-bottom: 15vh;
   overflow: auto;
   width: 100%;
   scroll-snap-type: y mandatory;
@@ -399,6 +399,7 @@
   max-width: 83vw;
   margin-right: 50%;
   transform: translate(50%);
+  margin-bottom: 1em;
 }
 
 .page.learning.content .card.next {

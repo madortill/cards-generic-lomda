@@ -2089,6 +2089,8 @@ function practicePopup(subject) {
     document.querySelector(".page.learning.content .practice-btn").style.filter = `blur(${blurAmount})`;
     document.querySelector(".page.learning.content .back-btn").style.filter = `blur(${blurAmount})`;
     document.querySelector(".page.learning.content .cards-container").style.filter = `blur(${blurAmount})`;
+}
+
     let popup =
         El("div", { cls: "dark" },
             // כל הקלף
@@ -2114,7 +2116,7 @@ function practicePopup(subject) {
                     // בלוק 1
                     El("div", { cls: "instruction-practice" },
                         El("div", { cls: "text" },
-                            El("b", {}, "2 דקות"),
+                            El("b", {}, "דקה"),
                             " לכל שאלה",
                         ),
                         El("img", { attributes: { src: "../assets/images/exam/beforeExam_popup/timer_icon.svg", class: "icon2" } }),
